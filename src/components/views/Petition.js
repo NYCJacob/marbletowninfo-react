@@ -20,19 +20,12 @@ const sendSubmit = async (values) => {
     fetch('http://localhost:8080/mailHandler.php', {
         method: 'POST',
         headers: new Headers({
-            'Content-Type': 'application/x-www-form-urlencoded', // <-- Specifying the Content-Type
+            'Content-Type': 'application/x-www-form-urlencoded', // <-- Specifying the Content-Type for post
         }),
         body: `firstName=${values.firstName}&lastName=${values.lastName}&streetAddress=${values.streetAddress}` +
-                `&city=${values.city}&zipcode=${values.zipcode}&email=${values.email}&signed=${values.signed}&resident=${values.resident}`
+                `&city=${values.city}&zipcode=${values.zipcode}&email=${values.email}&signed=${values.signed}&resident=${values.resident}&updates=${values.updates}`
     }).then(res=>res.json())
         .then(res => console.log(res));
-};
-
-const sleep = ms => new Promise(resolve => setTimeout(resolve, ms));
-
-const onSubmit = async values => {
-    await sleep(300)
-    window.alert(JSON.stringify(values, 0, 2))
 };
 
 const Error = ({ name }) => (
@@ -43,8 +36,7 @@ const Error = ({ name }) => (
             touched && error ? <ControlFeedback valid={!error}>{error}</ControlFeedback> : null
         }
     />
-)
-
+);
 
 const required = value => (value ? undefined : "Required");
 
@@ -115,7 +107,7 @@ const Petition = () => (
 
 
                         <FormGroup>
-                            <label>First Name</label>
+                            <Label>First Name</Label>
                             <Field name="firstName" placeholder="First Name"
                                    component={AdaptedInput} validate={required} control />
                             <Error name="firstName"/>
@@ -123,7 +115,7 @@ const Petition = () => (
 
 
                         <FormGroup>
-                            <label>Last Name</label>
+                            <Label>Last Name</Label>
                             <Field name="lastName" placeholder="Last Name"
                                    component={AdaptedInput} validate={required} control/>
                             <Error name="lastName"/>
@@ -166,22 +158,23 @@ const Petition = () => (
                                         <FormCheckLabel>Checking this box acts as your signature.</FormCheckLabel>
                             </FormCheck>
                         <Error name="signed"/>
-
+                        <br/>
                             <FormCheck>
                                 <Field name="resident"
                                        component={AdaptedCheckbox}
                                        validate={required}
                                        id="resident"
                                        type="checkbox"/>
-                                <FormCheckLabel>Are you a resident of Marbletown, NY.</FormCheckLabel>
+                                <FormCheckLabel>Are you an adult (over 18) resident of Marbletown, NY.</FormCheckLabel>
                             </FormCheck>
                         <Error name="resident"/>
+                        <br/>
 
                         <FormGroup>
                             <FormCheck>
-                                <Field name="receiveUpdates"
+                                <Field name="updates"
                                        component={AdaptedCheckbox}
-                                       id="receiveUpdates"
+                                       id="updates"
                                        type="checkbox"/>
                                 <FormCheckLabel>Check to receive future update by email.</FormCheckLabel>
                             </FormCheck>
@@ -210,8 +203,6 @@ const Petition = () => (
                                 Reset
                             </Button>
                         </Box>
-
-                        <pre>{JSON.stringify(values)}</pre>
                     </form>
                 )}
             />
