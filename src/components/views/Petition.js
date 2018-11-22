@@ -15,13 +15,17 @@ import {
     Row,
     Typography
 } from "@smooth-ui/core-sc";
-import { theme } from '@smooth-ui/core-sc'
 
 const sendSubmit = async (values) => {
-    fetch('http://localhost:8080/api/mailHandler.php', {
+    fetch('http://localhost:8080/mailHandler.php', {
         method: 'POST',
-        body: JSON.stringify(values)
-    }).catch((err) => console.log(err));
+        headers: new Headers({
+            'Content-Type': 'application/x-www-form-urlencoded', // <-- Specifying the Content-Type
+        }),
+        body: `firstName=${values.firstName}&lastName=${values.lastName}&streetAddress=${values.streetAddress}` +
+                `&city=${values.city}&zipcode=${values.zipcode}&email=${values.email}&signed=${values.signed}&resident=${values.resident}`
+    }).then(res=>res.json())
+        .then(res => console.log(res));
 };
 
 const sleep = ms => new Promise(resolve => setTimeout(resolve, ms));
@@ -30,17 +34,6 @@ const onSubmit = async values => {
     await sleep(300)
     window.alert(JSON.stringify(values, 0, 2))
 };
-
-
-// ****************************************
-//⬇️ THIS IS WHERE ALL THE MAGIC HAPPENS ⬇️   from final form smoothui example code
-// ********************************************************************************
-/* this is a HOC */
-const adapt = Component => ({input, meta: { valid }, ...rest}) =>
-    <Component {...input} {...rest} valid={valid} />;
-
-const AdaptedInput = adapt(Input, Error);
-const AdaptedCheckbox = adapt(Checkbox);
 
 const Error = ({ name }) => (
     <Field
@@ -54,8 +47,16 @@ const Error = ({ name }) => (
 
 
 const required = value => (value ? undefined : "Required");
-const composeValidators = (...validators) => value =>
-    validators.reduce((error, validator) => error || validator(value), undefined);
+
+// ****************************************
+//⬇️ THIS IS WHERE ALL THE MAGIC HAPPENS ⬇️   from final form smoothui example code
+// ********************************************************************************
+/* this is a HOC */
+const adapt = Component => ({input, meta: { valid }, ...rest}) =>
+    <Component {...input} {...rest} valid={valid} />;
+
+const AdaptedInput = adapt(Input, Error);
+const AdaptedCheckbox = adapt(Checkbox);
 
 const Petition = () => (
     <Grid>
@@ -68,7 +69,7 @@ const Petition = () => (
                 borderRadius: "3px"
             }}>
             <Form
-                onSubmit={onSubmit}
+                onSubmit={sendSubmit}
                 validate={values => {
                     const errors = {}
                     if (!values.firstName) {
@@ -210,7 +211,7 @@ const Petition = () => (
                             </Button>
                         </Box>
 
-                        <pre>{JSON.stringify(values, 0, 2)}</pre>
+                        <pre>{JSON.stringify(values)}</pre>
                     </form>
                 )}
             />
