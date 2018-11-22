@@ -30,7 +30,7 @@ const StyledTab = styled.div`
     border: 0;
     font-family: inherit;
     font-size: inherit;
-    padding: 0.5rem 2rem;
+    padding: 0.5rem 1rem;
     transition: background 0.3s cubic-bezier(0.22, 0.61, 0.36, 1);
 }
 

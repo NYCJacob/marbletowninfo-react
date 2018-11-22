@@ -84,7 +84,7 @@ class TabNav extends Component {
                             return(
 
                                 <NavLink key={index} to={tab.route}>
-                                    <Tab tabFor={tabNum}>{tab.tabText}</Tab>
+                                    <Tab tabFor={"sub" + tabNum}>{tab.tabText}</Tab>
                                 </NavLink>
                             )
                         })}

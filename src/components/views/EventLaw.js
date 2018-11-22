@@ -21,9 +21,11 @@ render(){
                                 {"route": "/eventlaw/draftlaw",
                                     "tabText": "Draft Law"},
                                 {"route": "/eventlaw/othertowns",
-                                    "tabText": "Other Towns Compared"},
+                                    "tabText": "Other Towns"},
                                 {"route": "/eventlaw/eventlawtimeline",
-                                    "tabText": "Event Law Timeline"}
+                                    "tabText": "Timeline"},
+                                {"route": "/eventlaw/analysis",
+                                    "tabText": "Analysis"}
                             ]}
                         />
                     </Col>
