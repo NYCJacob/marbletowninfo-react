@@ -34,26 +34,8 @@ const btnDefault = css`${btn("#ffffff", "#d5d5d5")} color: #555;`;
 const btnPrimary = btn("#4f93ce", "#285f8f");
 
 export default styled.div`
-  font-family: sans-serif;
-
-  h1 {
-    text-align: center;
-    color: #222;
-  }
-
-  & > div {
-    text-align: center;
-  }
-
-  a {
-    display: block;
-    text-align: center;
-    color: #222;
-  }
 
   form {
-    max-width: 500px;
-    margin: 10px auto;
     border: 1px solid #ccc;
     padding: 20px;
     box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
@@ -108,11 +90,6 @@ export default styled.div`
         ${btnDefault};
       }
     }
-    pre {
-      border: 1px solid #ccc;
-      background: rgba(0, 0, 0, 0.1);
-      box-shadow: inset 1px 1px 3px rgba(0, 0, 0, 0.2);
-      padding: 20px;
-    }
+    
   }
 `;
