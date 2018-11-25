@@ -65,6 +65,42 @@ const StyledTab = styled.div`
     height: 100%;
     border-right: 3px solid #00d8ff;
 }
+li {
+ display: inline-block;
+ transition-duration: 0.5s;
+}
+
+li:hover {
+  cursor: pointer;
+}
+
+ul {
+  display: inline;
+  padding: 0;
+}
+
+ul li ul {
+  visibility: hidden;
+  opacity: 0;
+  position: absolute;
+  transition: all 0.5s ease;
+  //margin-top: 1rem;
+  left: 0;
+  display: none;
+}
+
+ul li:hover > ul,
+ul li ul:hover {
+  visibility: visible;
+  opacity: 1;
+  display: block;
+}
+
+ul li ul li {
+  clear: both;
+  //width: 100%;
+}
+
 `;
 
 
@@ -83,9 +119,20 @@ class TabNav extends Component {
                         <NavLink exact to="/townboard">
                             <Tab tabFor="three">Town Board</Tab>
                         </NavLink>
-                        <NavLink exact to="/eventlaw/draftlaw">
-                            <Tab tabFor="four">Event Law</Tab>
-                        </NavLink>
+                        {/*<NavLink exact to="/eventlaw/draftlaw">*/}
+                            {/*<Tab tabFor="four">Event Law</Tab>*/}
+                        {/*</NavLink>*/}
+                        {/*<TabList>*/}
+                        <ul>
+                            <li>
+                                <Tab tabFor="#" className="subHeading">Proposed Laws</Tab>
+                                <ul className="dropDown">
+                                    <Tab tabFor="#" className="subDropDown">Event Law</Tab>
+                                    <Tab tabFor="#" className="subDropDown">Acc Apt/SUP Rev.</Tab>
+                                </ul>
+                            </li>
+                        </ul>
+                        {/*</TabList>*/}
                         <NavLink exact to="/petition">
                             <Tab tabFor="five">Petition</Tab>
                         </NavLink>
