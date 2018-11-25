@@ -5,6 +5,7 @@ import SubTabNav from "../SubTabNav";
 import {Route} from "react-router-dom";
 import OtherTowns from "./OtherTowns";
 import AprilDraftLaw from "./AprilDraftLaw";
+import EventTimeline from "./EventTimeline";
 
 // const OtherTown = () => <h1>other towns</h1>
 
@@ -22,7 +23,7 @@ render(){
                                     "tabText": "Draft Law"},
                                 {"route": "/eventlaw/othertowns",
                                     "tabText": "Other Towns"},
-                                {"route": "/eventlaw/eventlawtimeline",
+                                {"route": "/eventlaw/timeline",
                                     "tabText": "Timeline"},
                                 {"route": "/eventlaw/analysis",
                                     "tabText": "Analysis"}
@@ -39,6 +40,10 @@ render(){
                         <Route
                             path="/eventlaw/othertowns"
                             component={OtherTowns}
+                        />
+                        <Route
+                            path="/eventlaw/timeline"
+                            component={EventTimeline}
                         />
 
                     </Col>

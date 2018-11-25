@@ -56,7 +56,10 @@ const Petition = () => (
             <Col/>
             <Col xs={8} style={{
                 border: "1px solid #ccc",
-                padding: "10vw",
+                paddingLeft: "5vw",
+                paddingRight: "5vw",
+                paddingTop: "1vh",
+                paddingBottom: "2vh",
                 boxShadow: "2px 2px 5px rgba(0, 0, 0, 0.3)",
                 borderRadius: "3px"
             }}>
