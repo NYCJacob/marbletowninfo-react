@@ -43,6 +43,7 @@ class App extends Component {
                         <Grid.Box>
                             <Helmet>
                                 <title>MarbletownInfo: local politics of Marbletown NY</title>
+                                <base href="/" />
                             </Helmet>
                             <Switch>
                                 <Route exact path="/" component={ZoningMap}/>

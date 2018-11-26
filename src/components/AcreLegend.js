@@ -5,7 +5,7 @@ import styled from "styled-components";
 const StyledAcreLegend = styled.div`
     float: left;
     position: absolute;
-    top: 28vh;
+    top: 31vh;
     margin-left: .1vw;
     background: rgba(255, 255, 255, 0.9);
     font-family: Arial, sans-serif;
