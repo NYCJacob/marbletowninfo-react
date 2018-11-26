@@ -22,7 +22,7 @@ const sendSubmit = async (values) => {
         headers: new Headers({
             'Content-Type': 'application/x-www-form-urlencoded', // <-- Specifying the Content-Type for post
         }),
-        body: `firstName=${values.firstName}&lastName=${values.lastName}&streetAddress=${values.streetAddress}` +
+        body: `formCode=0&firstName=${values.firstName}&lastName=${values.lastName}&streetAddress=${values.streetAddress}` +
                 `&city=${values.city}&zipcode=${values.zipcode}&email=${values.email}&signed=${values.signed}&resident=${values.resident}&updates=${values.updates}`
     }).then(res=>res.json())
         .then(res => console.log(res));

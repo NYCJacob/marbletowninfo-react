@@ -38,7 +38,7 @@ const StyledTab = styled.div`
 .rwt__tab:focus {
     outline: 0;
     background-color: #f4f4f4;
-    background-color: rgba(0,0,0,0.05);
+    //background-color: rgba(0,0,0,0.05);
 }
 
 .rwt__tab[aria-selected="true"] {
@@ -79,13 +79,17 @@ ul {
   padding: 0;
 }
 
+.dropDown:hover {
+  opacity: 1;
+}
+
 ul li ul {
   visibility: hidden;
   opacity: 0;
   position: absolute;
   transition: all 0.5s ease;
   //margin-top: 1rem;
-  left: 0;
+  //left: 0;
   display: none;
 }
 
@@ -96,9 +100,35 @@ ul li ul:hover {
   display: block;
 }
 
+ul li:hover i {
+  color: #FFCF00;
+}
+
 ul li ul li {
   clear: both;
   //width: 100%;
+}
+.subDropDown {
+  border: solid #FFCF00 1px;
+  background: white;
+  opacity: 1;
+}
+.subDropDown button:hover {
+  opacity: 1;
+}
+
+.proposedLaws li > .rwt__tab {
+  font-weight: normal;
+  outline: none;
+}
+
+.rwt__tablist * {
+  outline: none !important;
+}
+
+.subDropDown {
+  position: relative;
+  z-index: 20;
 }
 
 `;
@@ -119,22 +149,24 @@ class TabNav extends Component {
                         <NavLink exact to="/townboard">
                             <Tab tabFor="three">Town Board</Tab>
                         </NavLink>
-                        {/*<NavLink exact to="/eventlaw/draftlaw">*/}
-                            {/*<Tab tabFor="four">Event Law</Tab>*/}
-                        {/*</NavLink>*/}
-                        {/*<TabList>*/}
-                        <ul>
+                        <ul className="proposedLaws">
                             <li>
-                                <Tab tabFor="#" className="subHeading">Proposed Laws</Tab>
+                                <Tab tabFor="#" onClick={() => {console.log("on click hit")}} className="subHeading"><span style={{paddingRight: "0.5vw"}}>Proposed Laws</span><i className=" far fa-caret-circle-down"></i></Tab>
                                 <ul className="dropDown">
-                                    <Tab tabFor="#" className="subDropDown">Event Law</Tab>
-                                    <Tab tabFor="#" className="subDropDown">Acc Apt/SUP Rev.</Tab>
+                                    <NavLink to="/proposedlaws/events">
+                                        <Tab tabFor="#" className="subDropDown">Event Law</Tab>
+                                    </NavLink>
+                                    <NavLink to="/proposedlaws/accaptsup">
+                                        <Tab tabFor="#" className="subDropDown">Acc Apt/SUP Rev.</Tab>
+                                    </NavLink>
                                 </ul>
                             </li>
                         </ul>
-                        {/*</TabList>*/}
                         <NavLink exact to="/petition">
                             <Tab tabFor="five">Petition</Tab>
+                        </NavLink>
+                        <NavLink exact to="/contact">
+                            <Tab tabFor="six">Contact/About</Tab>
                         </NavLink>
                     </TabList>
 

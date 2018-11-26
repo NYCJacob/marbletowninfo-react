@@ -8,7 +8,7 @@ import * as serviceWorker from './serviceWorker';
 
 ReactDOM.render(
     <ThemeProvider theme={theme}>
-    <App />
+        <App />
     </ThemeProvider>,
     document.getElementById('root'));
 
@@ -16,4 +16,4 @@ ReactDOM.render(
 // unregister() to register() below. Note this comes with some pitfalls.
 // Learn more about service workers: http://bit.ly/CRA-PWA
 
-// serviceWorker.unregister();
+serviceWorker.unregister();

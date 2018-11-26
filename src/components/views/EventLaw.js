@@ -1,13 +1,14 @@
 import React, { Component } from 'react'
 import styled from "styled-components";
-import { Grid, Col, Row} from '@smooth-ui/core-sc';
+import { Grid, Col, Row, Typography} from '@smooth-ui/core-sc';
 import SubTabNav from "../SubTabNav";
 import {Route} from "react-router-dom";
 import OtherTowns from "./OtherTowns";
 import AprilDraftLaw from "./AprilDraftLaw";
 import EventTimeline from "./EventTimeline";
+import EventAnaylsis from "./EventAnalysis";
 
-// const OtherTown = () => <h1>other towns</h1>
+const analysis = () => <h1>coming soon!</h1>
 
 class EventLaw extends Component {
 render(){
@@ -16,16 +17,19 @@ render(){
         <div>
             <Grid>
                 <Row>
+                    <Col xs={2}>
+                        <Typography variant="h2">Event Law:</Typography>
+                    </Col>
                     <Col>
                         <SubTabNav
                             tabConfig = {[
-                                {"route": "/eventlaw/draftlaw",
+                                {"route": "/proposedlaws/events",
                                     "tabText": "Draft Law"},
-                                {"route": "/eventlaw/othertowns",
+                                {"route": "/proposedlaws/events/othertowns",
                                     "tabText": "Other Towns"},
-                                {"route": "/eventlaw/timeline",
+                                {"route": "/proposedlaws/events/timeline",
                                     "tabText": "Timeline"},
-                                {"route": "/eventlaw/analysis",
+                                {"route": "/proposedlaws/events/analysis",
                                     "tabText": "Analysis"}
                             ]}
                         />
@@ -34,16 +38,20 @@ render(){
                 <Row>
                     <Col>
                         <Route
-                            path="/eventlaw/draftlaw"
+                            exact path="/proposedlaws/events"
                             component={AprilDraftLaw}
                         />
                         <Route
-                            path="/eventlaw/othertowns"
+                            path="/proposedlaws/events/othertowns"
                             component={OtherTowns}
                         />
                         <Route
-                            path="/eventlaw/timeline"
+                            path="/proposedlaws/events/timeline"
                             component={EventTimeline}
+                        />
+                        <Route
+                            path="/proposedlaws/events/analysis"
+                            component={EventAnaylsis}
                         />
 
                     </Col>

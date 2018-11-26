@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
-import { BrowserRouter, Route } from 'react-router-dom';
-import { createGlobalStyle } from 'styled-components';
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
+
+import {Helmet} from "react-helmet";
 import Grid from "hedron";
 import Header from "./components/Header";
 import TabNav from "./components/TabNav";
@@ -10,7 +11,11 @@ import TownBoard from "./components/views/TownBoard";
 import CensusView from "./components/views/CensusView";
 import EventLaw from "./components/views/EventLaw";
 import Petition from "./components/views/Petition";
+import ProposedAccAptSup from "./components/views/ProposedAccAptSup";
+import Contact from "./components/views/Contact";
 
+
+const NoMatch = () => <div><h3>This is not the page you were looking for.</h3></div>
 
 class App extends Component {
   render() {
@@ -19,6 +24,7 @@ class App extends Component {
             <Grid.Provider
                 breakpoints={{ sm: "-500", md: "501-750", lg: "+750" }}
             >
+
                     <Grid.Bounds direction="vertical">
 
                         <Grid.Bounds direction="horizontal" display="flex">
@@ -35,11 +41,19 @@ class App extends Component {
                         </Grid.Box>
 
                         <Grid.Box>
-                            <Route exact path="/" component={ZoningMap}/>
-                            <Route path="/census" component={CensusView}/>
-                            <Route path="/townboard" component={TownBoard}/>
-                            <Route path="/eventlaw" component={EventLaw}/>
-                            <Route path="/petition" component={Petition}/>
+                            <Helmet>
+                                <title>MarbletownInfo: local politics of Marbletown NY</title>
+                            </Helmet>
+                            <Switch>
+                                <Route exact path="/" component={ZoningMap}/>
+                                <Route path="/census" component={CensusView}/>
+                                <Route path="/townboard" component={TownBoard}/>
+                                <Route path="/proposedlaws/events" component={EventLaw}/>
+                                <Route path="/petition" component={Petition}/>
+                                <Route path="/contact" component={Contact}/>
+                                <Route path="/proposedlaws/accaptsup" component={ProposedAccAptSup}/>
+                                <Route component={NoMatch}/>
+                            </Switch>
                         </Grid.Box>
 
 

@@ -75,9 +75,7 @@ class TabNav extends Component {
 
         return (
             <StyledSubTab>
-                <Tabs
-                    defaultTab="0"
-                >
+                <Tabs defaultTab="sub0">
                     <TabList>
                         {tabConfig.map( (tab, index) => {
                             const tabNum = index.toString();
