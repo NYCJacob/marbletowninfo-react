@@ -17,6 +17,7 @@ import Contact from "./components/views/Contact";
 
 const NoMatch = () => <div><h3>This is not the page you were looking for.</h3></div>
 
+
 class App extends Component {
   render() {
     return (
@@ -43,7 +44,6 @@ class App extends Component {
                         <Grid.Box>
                             <Helmet>
                                 <title>MarbletownInfo: local politics of Marbletown NY</title>
-                                <base href="/" />
                             </Helmet>
                             <Switch>
                                 <Route exact path="/" component={ZoningMap}/>
