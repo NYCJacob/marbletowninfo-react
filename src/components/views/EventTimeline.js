@@ -3,7 +3,15 @@ import styled from "styled-components";
 import { Grid, Col, Row, Typography } from '@smooth-ui/core-sc';
 
 const StyledEventTimeline = styled.section`
-  
+  @media screen and (max-width: 450px) {
+    font-size: smaller;
+    ul {
+          padding-left: 0.1em;
+    }
+    dd {
+          padding-left: 0.1em;
+    }
+}
 `
 
 class EventTimeline extends Component{

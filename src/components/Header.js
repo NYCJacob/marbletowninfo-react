@@ -1,12 +1,12 @@
 import React from 'react';
-import styled from "styled-components";
-
+import { styled, css, up, down } from '@smooth-ui/core-sc'
 
 const HeaderContainer = styled.h1`
-    margin-bottom: 0.5em;
-    margin-top: 1em;
+    //margin-bottom: 0.5em;
+    margin-top: .5em;
     margin-left: 0.5em;
-    
+    padding-bottom: 0;
+    margin-bottom: 0;
 `;
 
 const Logo1 = styled.span`
@@ -19,6 +19,12 @@ const Logo1 = styled.span`
     padding-left: 1rem;
     padding-right: .5rem;
     padding-top: .5rem;
+    ${down('md', css`
+      font-size: 1.0em;
+    `)}
+    ${down('sm', css`
+      font-size: 0.7em;
+    `)}
 `;
 
 const Logo2 = styled.span`
@@ -31,12 +37,19 @@ const Logo2 = styled.span`
     padding-left: .5rem;
     padding-right: 1rem;
     padding-top: .5rem;
+    ${down('md', css`
+      font-size: 1.0em;
+    `)}
+    
+    ${down('sm', css`
+      font-size: 0.7em;
+    `)}
 `;
 
 
 function Header(props) {
     return (
-        <HeaderContainer fontSize={ [6,7]}>
+        <HeaderContainer>
             <Logo1>Marbletown</Logo1>
             <Logo2>Info</Logo2>
         </HeaderContainer>

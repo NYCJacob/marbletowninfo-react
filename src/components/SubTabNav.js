@@ -2,10 +2,12 @@ import React, { Component } from 'react';
 import styled from "styled-components";
 import { NavLink } from 'react-router-dom';
 import { Tabs, Tab, TabList } from 'react-web-tabs';
-import { Grid, Col, Row } from '@smooth-ui/core-sc';
-
 
 const StyledSubTab = styled.div`
+
+@media screen and (max-width: 450px) {
+    font-size: smaller;
+} 
     
     .rwt__tabs[data-rwt-vertical="true"] {
     display: flex;
@@ -32,6 +34,9 @@ const StyledSubTab = styled.div`
     font-size: inherit;
     padding: 0.2rem 2rem;
     transition: background 0.3s cubic-bezier(0.22, 0.61, 0.36, 1);
+    @media screen and (max-width: 450px) {
+    padding: 0.2rem 0.5rem;
+  }
 }
 
 .rwt__tab[aria-selected="false"]:hover,

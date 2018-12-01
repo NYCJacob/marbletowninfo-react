@@ -17,9 +17,6 @@ render(){
         <div>
             <Grid>
                 <Row>
-                    <Col xs={2}>
-                        <Typography variant="h2">Event Law:</Typography>
-                    </Col>
                     <Col>
                         <SubTabNav
                             tabConfig = {[

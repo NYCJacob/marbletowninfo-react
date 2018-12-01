@@ -1,11 +1,17 @@
 import React, { Component } from 'react';
-import styled from "styled-components";
+import styled, {css} from "styled-components";
+import { down } from '@smooth-ui/core-sc'
 import { NavLink } from 'react-router-dom';
 import { Tabs, Tab, TabList } from 'react-web-tabs';
 import 'react-web-tabs/dist/react-web-tabs.css';
 
 
 const StyledTab = styled.div`
+
+${down('sm', css`
+  visibility: hidden;
+  display: none;
+`)}
     margin: 0.11rem;
 
     .rwt__tabs[data-rwt-vertical="true"] {

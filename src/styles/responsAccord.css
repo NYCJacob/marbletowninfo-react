@@ -6,11 +6,18 @@
 .Collapsible__contentInner {
     padding: 10px;
     border: 1px solid #ebebeb;
-    border-top: 0; }
+    border-top: 0;
+}
 .Collapsible__contentInner p {
     margin-bottom: 10px;
     font-size: 14px;
     line-height: 20px; }
+
+.Collapsible__contentInner p, table {
+    background: rgba(255, 171, 46, 0.2);
+}
+
+
 .Collapsible__contentInner p:last-child {
     margin-bottom: 0; }
 
@@ -20,10 +27,10 @@
     text-decoration: none;
     color: #333333;
     position: relative;
-    border: 1px solid white;
-    padding: 10px;
-    background: #ffad2c;
-    color: white; }
+    border: 2px solid #ffad2c;
+    padding: 0.5em;
+    /*background: #ffad2c;*/
+}
 .Collapsible__trigger:after {
     font-family: 'Font Awesome 5 Pro';
     font-weight: 300;
@@ -39,12 +46,4 @@
 
 .years {
     border-bottom: 1px solid black;
-}
-
-.meetingPane {
-    background: rgba(255, 171, 46, 0.7);
-    color: black;
-}
-.meetingPane + div {
-    border-left: 1px solid yellowgreen;
 }

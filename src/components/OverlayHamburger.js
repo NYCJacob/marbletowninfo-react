@@ -1,15 +1,21 @@
 import React, { Component } from 'react';
-import styled from "styled-components";
+// import styled from "styled-components";
 import {NavLink} from "react-router-dom";
+import { styled, css, up } from '@smooth-ui/core-sc'
 
 // hamburger style based on https://codepen.io/CreativeJuiz/pen/oCBxz
 
 const StyledOverlayHamburger = styled.div`
+${up('sm', css`
+  visibility: hidden;
+  display: none;
+`)}
+
 #toggle {
   display: block;
   width: 28px;
   height: 30px;
-  margin: 30px auto 10px;
+  margin: 2em auto 10px;
 }
 
 #toggle span:after,
@@ -77,7 +83,7 @@ const StyledOverlayHamburger = styled.div`
     padding: 8px;
     text-decoration: none;
     font-size: 36px;
-    color: #818181;
+    color: white;
     display: block;
     transition: 0.3s; 
 }
@@ -137,8 +143,10 @@ class OverlayHamburger extends Component {
                     <ul className="overlay-content">
                         <li><NavLink to="/" onClick={(e)=> this.toggleMenu(e)}>Home</NavLink></li>
                         <li><NavLink to="/census" onClick={(e)=> this.toggleMenu(e)}>Census</NavLink></li>
-                        <li><NavLink to="/eventlaw" onClick={(e)=> this.toggleMenu(e)}>Event Law</NavLink></li>
+                        <li><NavLink to="/proposedlaws/events" onClick={(e)=> this.toggleMenu(e)}>Event Law</NavLink></li>
+                        <li><NavLink to="/proposedlaws/accaptsup" onClick={(e)=> this.toggleMenu(e)}>Acc Apt. Law</NavLink></li>
                         <li><NavLink to="/petition" onClick={(e)=> this.toggleMenu(e)}>Petition</NavLink></li>
+                        <li><NavLink to="/contact" onClick={(e)=> this.toggleMenu(e)}>Contact</NavLink></li>
                     </ul>
                 </div>
             </StyledOverlayHamburger>

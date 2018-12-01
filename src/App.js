@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 
 import {Helmet} from "react-helmet";
-import Grid from "hedron";
+import { Grid, Col, Row} from '@smooth-ui/core-sc';
 import Header from "./components/Header";
 import TabNav from "./components/TabNav";
 import OverlayHamburger from "./components/OverlayHamburger";
@@ -22,26 +22,20 @@ class App extends Component {
   render() {
     return (
         <BrowserRouter>
-            <Grid.Provider
-                breakpoints={{ sm: "-500", md: "501-750", lg: "+750" }}
-            >
-
-                    <Grid.Bounds direction="vertical">
-
-                        <Grid.Bounds direction="horizontal" display="flex">
-                            <Grid.Box sm={{fontSize: "0.5em"}} flex="auto">
+                    <Grid>
+                        <Row>
+                            <Col>
                                 <Header/>
-                            </Grid.Box>
-                            <Grid.Box fluid={true} md={{hidden: true}} lg={{hidden: true}} flex="auto">
+                            </Col>
+                            <Col>
                                 <OverlayHamburger/>
-                            </Grid.Box>
-                        </Grid.Bounds>
-
-                        <Grid.Box sm={{hidden: true}} md={{ padding: "0"}}>
-                            <TabNav/>
-                        </Grid.Box>
-
-                        <Grid.Box>
+                            </Col>
+                        </Row>
+                        <Row>
+                            <Col>
+                                <TabNav/>
+                            </Col>
+                        </Row>
                             <Helmet>
                                 <title>MarbletownInfo: local politics of Marbletown NY</title>
                             </Helmet>
@@ -55,11 +49,7 @@ class App extends Component {
                                 <Route path="/proposedlaws/accaptsup" component={ProposedAccAptSup}/>
                                 <Route component={NoMatch}/>
                             </Switch>
-                        </Grid.Box>
-
-
-                    </Grid.Bounds>
-                </Grid.Provider>
+                    </Grid>
         </BrowserRouter>
     );
   }

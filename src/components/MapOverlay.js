@@ -4,7 +4,7 @@ import styled from "styled-components";
 const StyledMapOverlay = styled.div`
     position: absolute;
     top: 28vh;
-    left: 65vw;
+    left: 62vw;
     min-height: 10vh;
     background: rgba(255, 255, 255, 0.8);
     font-family: Arial, sans-serif;

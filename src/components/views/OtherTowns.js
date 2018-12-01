@@ -3,6 +3,9 @@ import styled from "styled-components";
 import { Grid, Col, Row } from '@smooth-ui/core-sc';
 
 const StyledOtherTowns = styled.section`
+@media screen and (max-width: 450px) {
+    font-size: smaller;
+}
   thead {
     border-bottom: 1px solid black;
   }

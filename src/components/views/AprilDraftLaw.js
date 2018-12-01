@@ -4,6 +4,10 @@ import styled from "styled-components";
 import { Grid, Col, Row} from '@smooth-ui/core-sc';
 
 const  StyledEventLaw = styled.section`
+@media screen and (max-width: 450px) {
+    font-size: smaller;
+}
+
 #draft-law-content {
   border-right: 1px solid black;
 border-left: 1px solid black;
@@ -95,7 +99,6 @@ class AprilDraftLaw extends Component {
         return(
             <StyledEventLaw>
                 <Grid>
-
                     <Row>
                         <Col>
                             <article id="draft-law-content">

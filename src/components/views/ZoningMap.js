@@ -1,7 +1,6 @@
 import React from 'react';
 import styled from "styled-components";
-import Grid from "hedron";
-
+import { Grid, Col, Row, Typography, Switch, FormCheck, FormCheckLabel} from '@smooth-ui/core-sc';
 import mapboxgl from 'mapbox-gl';
 import "../../styles/mapbox-gl.css";
 import { himitsu } from "../../api/config"
@@ -18,8 +17,7 @@ const StyledMap = styled.div`
         position: relative;
         top: 0;
         bottom: 0;
-        height: 75vh;
-        /*width: 100vw;*/
+        height: 72vh;
     }
     
     #overlay {
@@ -118,49 +116,32 @@ const StyledMap = styled.div`
 `;
 
 
-
 class ZoningMap extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
             parcelDetails: {},
+            agDistricts: false
         }
+        this.map ="";
+        this.toggleLayer = this.toggleLayer.bind(this);
     }
-
 
     componentDidUpdate() {
         // this.setFill();
     }
 
-    componentDidMount() {
-        const map = new mapboxgl.Map({
+    loadMap() {
+        this.map = new mapboxgl.Map({
             container: this.mapContainer,
             style: 'mapbox://styles/nyjacob/cjkls0vmj0mz52rqey0snp39t',
             center: [-74.109661, 41.881201],
             zoom: 11.0
         });
 
-        map.on('load', () => {
-            map.addSource('tmarble_shp-09wfzs', {
-                "type": "vector",
-                "url": "mapbox://nycjacob.c2q8h92i"
-            });
-            // map.addLayer({
-            //     "id": "tmarble-parcels-shp",
-            //     "type": "fill",
-            //     "source": "tmarble_shp-09wfzs",
-            //     "source-layer": "tmarble_shp-09wfzs",
-            //     "paint": {
-            //         "fill-opacity": 0.1
-            //     }
-            // });
-        });
-
-        map.getCanvas().style.cursor = 'crosshair';
-
-
-        map.on('mousemove', (e) => {
-            const features = map.queryRenderedFeatures(e.point);
+        this.map.getCanvas().style.cursor = 'crosshair';
+        this.map.on('mousemove', (e) => {
+            const features = this.map.queryRenderedFeatures(e.point);
             if (features && features[0]){
                 console.log( features[0].properties );
                 this.setState({
@@ -170,21 +151,64 @@ class ZoningMap extends React.Component {
         });
     }
 
+    toggleLayer() {
+        if (!this.state.agDistricts) {
+            this.setState({
+                agDistricts : this.state.agDistricts
+            });
+            this.map.addLayer({
+                "id": "agdistricts",
+                "type": "fill",
+                "source": {
+                    type: 'vector',
+                    url: 'mapbox://nyjacob.8qm40n0w'
+                },
+                "source-layer": "cugir-007995-c70zri",
+                "paint": {
+                    "fill-opacity": 1,
+                    'fill-color': 'rgba(61,153,80,0.55)'
+                }
+            });
+        } else {
+            this.map.removeLayer("agdistricts");
+        }
+
+    }
+
+    componentDidMount() {
+            this.loadMap();
+
+    }
+
     render(){
         return (
             <StyledMap>
-                <Grid.Bounds direction="vertical">
-                    <Grid.Box >
-                        <strong>Zone borders:</strong> Hover over zone labels for description
-                    </Grid.Box>
+                <Grid>
+                    <Row >
+                        <Col>
                         <ZoneLegend/>
+                        </Col>
+                    </Row>
 
-                    <Grid.Box>
-                        <div ref={el => this.mapContainer = el} id="mapGL"></div>
-                    </Grid.Box>
+
+                    <Row>
+                        <Col>
+                            <div ref={el => this.mapContainer = el} id="mapGL"></div>
+                        </Col>
+                    </Row>
                     <MapOverlay details={ this.state.parcelDetails } />
                     <AcreLegend/>
-                </Grid.Bounds>
+                    <Row>
+                        <Col >
+                            <FormCheck>
+                                <Switch id="agDist" labeled onClick={this.toggleLayer} />
+                                <FormCheckLabel htmlFor="agDist">
+                                    Show Agriculture Districts Overlay
+                                </FormCheckLabel>
+                            </FormCheck>
+                        </Col>
+                    </Row>
+                </Grid>
 
             </StyledMap>
         );
