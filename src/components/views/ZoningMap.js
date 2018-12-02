@@ -141,6 +141,7 @@ class ZoningMap extends React.Component {
             zoom: 11.0
         });
 
+        this.map.addControl(new mapboxgl.NavigationControl());
         this.map.getCanvas().style.cursor = 'crosshair';
         this.map.on('mousemove', (e) => {
             const features = this.map.queryRenderedFeatures(e.point);
