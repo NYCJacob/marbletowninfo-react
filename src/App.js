@@ -24,15 +24,15 @@ class App extends Component {
         <BrowserRouter>
                     <Grid>
                         <Row>
-                            <Col>
+                            <Col xs={6} sm={8} md={10}>
                                 <Header/>
                             </Col>
-                            <Col>
+                            <Col xs={6} sm={4} md={2}>
                                 <OverlayHamburger/>
                             </Col>
                         </Row>
                         <Row>
-                            <Col>
+                            <Col xs="auto">
                                 <TabNav/>
                             </Col>
                         </Row>
