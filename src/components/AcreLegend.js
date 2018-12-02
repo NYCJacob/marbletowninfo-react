@@ -32,6 +32,15 @@ const StyledAcreLegend = styled.div`
         background-color: #636363;
     
     }
+    
+    @media (max-width: 991px) and (min-width: 768px){   //md - lg
+      top: 15vh;
+      font-size: x-small;
+    }
+    @media (max-width: 767px) {
+      top: 18vh;
+      font-size: x-small;
+    }
 `;
 
 

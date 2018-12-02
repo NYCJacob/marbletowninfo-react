@@ -13,6 +13,8 @@ mapboxgl.accessToken = himitsu.mapboxAPI;
 // styles for map copied from body {https://www.mapbox.com/help/choropleth-studio-gl-pt-2/*/
 
 const StyledMap = styled.div`
+* { box-sizing: border-box; }
+
     #mapGL {
         position: relative;
         top: 0;

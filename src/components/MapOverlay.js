@@ -19,6 +19,16 @@ const StyledMapOverlay = styled.div`
     #details {
       font-size: large;
     }
+    
+    @media (max-width: 991px) and (min-width: 768px){   //md - lg
+      top: 14vh;
+      font-size: x-small;
+    }
+    @media (max-width: 767px) {
+      top: 18vh;
+      font-size: x-small;
+    }
+    
 `;
 
 
@@ -26,7 +36,6 @@ class MapOverlay extends Component {
     render() {
         return(
             <StyledMapOverlay>
-
                 { this.props.details.ACRES ?
                     <div id="details">
                         <div>Zoning: {this.props.details.ZONING}</div>

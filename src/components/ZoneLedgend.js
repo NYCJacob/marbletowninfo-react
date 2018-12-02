@@ -11,6 +11,8 @@ import {Grid, Col, Row, Button, Typography,
 
 
 const StyledModalBody = styled(ModalBody)`
+* { box-sizing: border-box; }
+
   .modal-parentlist li {
       list-style-type: upper-alpha;
     }
@@ -30,13 +32,14 @@ const StyledDivButton = styled.div`
 `;
 
 const StyledZoneButton = styled.span`
-        //background: rgb(128,224,228);
-        // border: 1px solid black;
+        @media (max-width: 575px) {
+          font-size: x-small;
+        }
         color: black;
         padding: .1em;
         flex: 1;
         i {
-        padding-right: 1vw;
+          padding-right: 1vw;
         }
 `;
 
@@ -80,7 +83,7 @@ const StyledR3Button = styled(StyledZoneButton)`
 export const ZoneLegend = () => (
     <Grid>
         <Row justifiedContent={"flex-end"}>
-            <Col>
+            <Col xs={12} md={7} style={{textAlign: "center"}}>
                 <Toggler>
                     {({ toggled, onToggle}) => (
                         <StyledDivButton className="modal-wrapper">
@@ -161,7 +164,7 @@ export const ZoneLegend = () => (
                 <StyledR1Button>R-1</StyledR1Button>
                 <StyledR3Button>R-3</StyledR3Button>
             </Col>
-            <Col style={{textAlign: "right", paddingRight: "2vw"}}>
+            <Col xs={12} md={5} style={{textAlign: "center", paddingRight: "3vw"}}>
                 <StyledZoneButton >
                     <span style={{color: "red"}}>
                           <i className="fal fa-exclamation-circle"></i>

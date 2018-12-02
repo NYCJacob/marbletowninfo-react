@@ -1,15 +1,22 @@
 import React from 'react';
-import { styled, css, up, down } from '@smooth-ui/core-sc'
+import { Grid, Row, Col, Typography, styled, css, down } from '@smooth-ui/core-sc'
+
+
+const SubTitle = styled.div`
+
+`;
 
 const HeaderContainer = styled.h1`
+* { box-sizing: border-box; }
     //margin-bottom: 0.5em;
-    margin-top: .5em;
-    margin-left: 0.5em;
+    margin-top: .3em;
+    margin-left: 0.3em;
     padding-bottom: 0;
     margin-bottom: 0;
 `;
 
 const Logo1 = styled.span`
+* { box-sizing: border-box; }
     font-size: 1.5em;
     background-color: #FFCF00;
     color: #000000;
@@ -19,15 +26,20 @@ const Logo1 = styled.span`
     padding-left: 1rem;
     padding-right: .5rem;
     padding-top: .5rem;
+    ${down('lg', css`
+      font-size: 0.8em;
+    `)}
     ${down('md', css`
-      font-size: 1.0em;
+      font-size: 0.6em;
     `)}
     ${down('sm', css`
-      font-size: 0.7em;
+      font-size: 0.4em;
     `)}
 `;
 
 const Logo2 = styled.span`
+* { box-sizing: border-box; }
+
     font-size: 1.5em;
     background-color: #40617F;
     color: #ffffff;
@@ -37,22 +49,40 @@ const Logo2 = styled.span`
     padding-left: .5rem;
     padding-right: 1rem;
     padding-top: .5rem;
-    ${down('md', css`
-      font-size: 1.0em;
+    ${down('lg', css`
+      font-size: 0.8em;
     `)}
     
+    ${down('md', css`
+      font-size: 0.6em;
+    `)}
     ${down('sm', css`
-      font-size: 0.7em;
+      font-size: 0.4em;
     `)}
 `;
 
 
 function Header(props) {
     return (
-        <HeaderContainer>
-            <Logo1>Marbletown</Logo1>
-            <Logo2>Info</Logo2>
-        </HeaderContainer>
+        <Grid>
+            <Row>
+                <Col>
+                    <HeaderContainer>
+                        <Logo1>Marbletown</Logo1>
+                        <Logo2>Info</Logo2>
+                    </HeaderContainer>
+                </Col>
+
+            </Row>
+            <Row mt={1}>
+                <Col>
+                    <Typography fontSize=".8em" pt={3}>
+                        <em>Providing insight into local politics of Marbletown, NY.  Democracy starts in your backyard.</em>
+                    </Typography>
+                </Col>
+            </Row>
+        </Grid>
+
     );
 }
 

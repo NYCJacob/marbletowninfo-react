@@ -7,7 +7,6 @@ import { styled, css, up } from '@smooth-ui/core-sc'
 
 const StyledOverlayHamburger = styled.div`
 ${up('sm', css`
-  visibility: hidden;
   display: none;
 `)}
 
