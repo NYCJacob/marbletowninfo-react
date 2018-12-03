@@ -25,7 +25,12 @@ const sendSubmit = async (values) => {
         }),
         body: `formCode=0&firstName=${values.firstName}&lastName=${values.lastName}&streetAddress=${values.streetAddress}` +
                 `&city=${values.city}&zipcode=${values.zipcode}&email=${values.email}&signed=${values.signed}&resident=${values.resident}&updates=${values.updates}`
-    }).then(res=> res.json());
+    }).then( function (response) {
+        if(response.ok){
+            return response.blob();
+        }
+        throw new Error('Network response error')
+    });
 };
 
 const Error = ({ name }) => (
@@ -48,7 +53,7 @@ const adapt = Component => ({input, meta: { valid }, ...rest}) =>
     <Component {...input} {...rest} valid={valid} />;
 
 const AdaptedInput = adapt(Input, Error);
-const AdaptedCheckbox = adapt(Checkbox);
+const AdaptedCheckbox = adapt(Checkbox, Error);
 
 const Petition = () => (
     <Grid>
@@ -97,8 +102,10 @@ const Petition = () => (
                     return errors
                 }}
 
-                render={({ handleSubmit, form, submitting, pristine, values }) => (
-                    <form onSubmit={handleSubmit}>
+                render={({ handleSubmit, form, submitting, pristine, reset }) => (
+                    <form onSubmit={ event => {
+                        handleSubmit(event).then(reset);
+                    } }>
                         <Typography variant="h1" textAlign="center">PETITION</Typography>
                         <Typography variant="h2" textAlign="center">No Commercial Events in Residential Zones</Typography>
                         <br/>
@@ -107,8 +114,6 @@ const Petition = () => (
                             Protect Marbletown's current zoning laws.  Keep commerical events (weddings, festivals, and concerts) out of residential areas.
                         </Typography>
                         <hr/>
-
-
                         <FormGroup>
                             <Label>First Name</Label>
                             <Field name="firstName" placeholder="First Name"

@@ -65,7 +65,7 @@ const Contact = () => (
                 borderRadius: "3px"
             }}>
                 <Form
-                    onSubmit={sendSubmit}
+                    onSubmit={sendSubmit }
                     validate={values => {
                         const errors = {}
                         if (!values.fullName) {
@@ -75,8 +75,10 @@ const Contact = () => (
                         return errors
                     }}
 
-                    render={({ handleSubmit, form, submitting, pristine, values }) => (
-                        <form onSubmit={handleSubmit}>
+                    render={({ handleSubmit, form, submitting, pristine, values, reset }) => (
+                        <form onSubmit={ event => {
+                            handleSubmit(event).then(reset);
+                        } }>
                             <Typography variant="h1" textAlign="center">Love to hear from you!</Typography>
                             <hr/>
 
