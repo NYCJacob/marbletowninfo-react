@@ -7,6 +7,7 @@ import OtherTowns from "./OtherTowns";
 import AprilDraftLaw from "./AprilDraftLaw";
 import EventTimeline from "./EventTimeline";
 import EventAnaylsis from "./EventAnalysis";
+import SevReport from "./SevReport";
 
 const analysis = () => <h1>coming soon!</h1>
 
@@ -27,7 +28,7 @@ render(){
                                 {"route": "/proposedlaws/events/timeline",
                                     "tabText": "Timeline"},
                                 {"route": "/proposedlaws/events/analysis",
-                                    "tabText": "Analysis"}
+                                    "tabText": "Subcomm Report/Analysis"}
                             ]}
                         />
                     </Col>
@@ -39,16 +40,16 @@ render(){
                             component={AprilDraftLaw}
                         />
                         <Route
-                            path="/proposedlaws/events/othertowns"
+                            exact path="/proposedlaws/events/othertowns"
                             component={OtherTowns}
                         />
                         <Route
-                            path="/proposedlaws/events/timeline"
+                            exact path="/proposedlaws/events/timeline"
                             component={EventTimeline}
                         />
                         <Route
-                            path="/proposedlaws/events/analysis"
-                            component={EventAnaylsis}
+                            exact path="/proposedlaws/events/analysis"
+                            component={SevReport}
                         />
 
                     </Col>

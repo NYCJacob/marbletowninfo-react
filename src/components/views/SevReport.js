@@ -4,6 +4,9 @@ import styled from "styled-components";
 import { Grid, Col, Row} from '@smooth-ui/core-sc';
 
 const StyledSevReport = styled.section`
+  article * {
+    line-height: 1.6;
+  }
   .bold {
     font-weight: bold;
     }
@@ -325,6 +328,7 @@ class SevReport extends Component {
                                 <tr>
                                     <td>
                                         <span className="bold">Noise</span>
+                                        <br/>
                                         SEVs will create noise that will interfere with the quality of
                                         life in the surrounding neighborhood and will reduce
                                         property values.
@@ -344,7 +348,7 @@ class SevReport extends Component {
                                 </tr>
                                 <tr>
                                     <td>
-                                        <span className="bold">Location of SEVs.</span>
+                                        <span className="bold">Location of SEVs.</span><br/>
                                         SEV’s create safety concerns
                                         for the community, create
                                         unwanted noise and light
@@ -352,16 +356,151 @@ class SevReport extends Component {
                                     </td>
                                     <td>
                                         <ul>
-                                            <li></li>
-                                            <li></li>
-                                            <li></li>
-                                            <li></li>
-                                            <li></li>
+                                            <li>SEVs should not be allowed in residential districts</li>
+                                            <li>Parcel size should be 25 acres; however, the event
+                                                location should be reviewed using a formula which
+                                                considers the parcel size and configuration, location of
+                                                neighbors, vegetation, applicant’s plan for traffic and
+                                                pedestrian safety, sound and light control, quality of
+                                                roads for event access, and fire/safety codes</li>
+                                            <li>Event must not restrict business</li>
+                                            <li>SEVs should be allowed in business districts; however,
+                                                use regulations should be tailored to the district and
+                                                SEV location. SEVs should be enclosed in permanent
+                                                buildings in business districts</li>
                                         </ul>
-
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <span className="bold">Operations.</span><br/>
+                                        SEV operations reduce neighborhood quality of life,
+                                        create traffic and other hazards and can’t be controlled
+                                    </td>
+                                    <td>
+                                        <ul>
+                                            <li>SEV must have a plan that meets MT requirements</li>
+                                            <li>All events must have the owner on site or an event
+                                                manager that has authority to act to counter concerns
+                                                identified</li>
+                                            <li>Accurately dimensioned site plan with all physical
+                                                elements of the event identified
+                                            </li>
+                                            <li>No hotels, camping, RV’s allowed without SUP</li>
+                                            <li>No pre or post event dinners</li>
+                                            <li>Limit operations from 10 AM to 10 PM with 1 hour for clean up
+                                            </li>
+                                            <li>Max attendance determined by parcel size and
+                                                configuration; roads and ingress and egress concerns
+                                            </li>
+                                            <li>Event frequency regulated. Limit to 12/year, 2 per
+                                                month with a minimum of 5 days in between events
+                                            </li>
+                                        </ul>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <span className="bold">Enforcement.</span><br/>
+                                        SEVs once permitted will ignore requirements. There is
+                                        no mechanism of enforcement
+                                    </td>
+                                    <td>
+                                        <ul>
+                                            <li>Create an enforceable contract with applicant</li>
+                                            <li>Set up fines associated with infractions</li>
+                                            <li>3 infractions in one event SUP not renewed</li>
+                                            <li>Applicant/owner should be at event</li>
+                                            <li>Create “event description form” and review 10 days
+                                                before with applicant.</li>
+                                            <li>Hire constable or event enforcement person. Use SUP
+                                                fee to pay for constable. He or she should be on call
+                                                24/7 and the primary governmental POC for all
+                                                complaints. His or her # should be available on the web
+                                                and posted on a sign at the event. The constable must
+                                                be trained and deputized
+                                            </li>
+                                            <li>Require single point of contact from applicant for the event.
+                                            </li>
+                                            <li>Have failures to correct problems recorded and
+                                                influence future applications by applicant
+                                            </li>
+                                        </ul>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <span className="bold">Public Information</span>
+                                        <br/>
+                                        There is no mechanism to alert the public of future
+                                        events or the details on approved events.
+                                    </td>
+                                    <td>
+                                        <ul>
+                                            <li>
+                                                Set up SEV website and populate with event details
+                                                and town requirements. Send letter to all neighbors.
+                                            </li>
+                                        </ul>
                                     </td>
                                 </tr>
                             </table>
+                            <article>
+                                <p className="bold">Committee Member’s Recommendations and Areas for Future Study:</p>
+                                <ul>
+                                    <li>Generate legislative language that supports the mitigations detailed above</li>
+                                    <li>Limit the SEV legislation to only business and agricultural districts</li>
+                                    <li>Obtain lessons learned by enacting legislation for business and agricultural districts and
+                                        reassess the application of the legislation to other zoning districts in Marbletown</li>
+                                    <li>Create a sound ordinance for Marbletown</li>
+                                    <li>Create a means to inform the public on SEV actions</li>
+                                    <li>Generate a means of enforcement for SEV that is viable and sufficiently punitive to prevent
+                                        applicants from ignoring the legislation. Understand the full ramifications that come along
+                                        with having a "constable" - who engages him/her, how his/her decisions impact the town's
+                                        liability, how does he/she interact with the Police - all that needs to be fleshed or spelled
+                                        out with input from the attorney and maybe a venue/event operator.
+                                    </li>
+                                    <li>identifying fees and penalties. For example, the town should charge fees for providing
+                                        services directly related to the event or event venue. We should list a budget or capital
+                                        items, like the sound meter, and make sure the general permit fees cover those items.
+                                    </li>
+                                    <li>Regarding the number of events that an operator can hold over the period of a year - how
+                                        will the town handle those prime weekends in May and June when there might be many
+                                        more than one event being held in town. If you total the number of potential venues
+                                        (under/over the 25 acres threshold), that's your minimum number of events that could be
+                                        scheduled on those prime weekends. Even if each of those events pays its fees, how many
+                                        "competent" constables and traffic directors will be on duty and where will they come
+                                        from? I don't know if there are now only 1 or 2 possible locations (which might be
+                                        manageable) that will be impacted but we must consider the possibility we may have 5+
+                                        events on the same night in the future.</li>
+                                    <li>Determine what the overall financial benefit SEVs provide the town</li>
+                                    <li>Determine what constitutes a private and commercial event</li>
+                                    <li>Determine real facts about the impact SEVs have on property values</li>
+                                    <li>Bring existing illegal SEVs into compliance or shut them down</li>
+                                    <li>Determine if there is a way to use SEVs to help preserve historic buildings</li>
+                                    <li>Make the rules specific and understood</li>
+                                    <li>Set up monitoring committee to track SEVs in town (monitoring and correcting problems for
+                                        and against in current rules)</li>
+                                    <li>Establish rules specific to the districts</li>
+                                    <li>Establish different number of events allowed based on event type (yoga retreat vs rock
+                                        concert)
+                                    </li>
+                                    <li>Determine security requirements for SEVs. On site enforcement based on number of
+                                        participants at event (over 100 must have private security)</li>
+                                    <li>Discussions to date have focused too much focus on weddings; what about tractor pulls and
+                                        church suppers?</li>
+                                    <li>Determine what events are exempt from EVS rules? (Church Suppers)</li>
+                                    <li>Determine Insurance amounts and what types (compensation and liability on file with town)
+                                    </li>
+                                </ul>
+                                <p className="bold">Recommended Next Steps:</p>
+                                <p>
+                                    The findings of the Subcommittee are provided to the Planning and Zoning Committee to facilite
+                                    their deliberations on the SEV regulations. We recommend that the PZC consider these findings
+                                    and use them to assist in the development of future regulations on Marbletown Special Event
+                                    Venues.
+                                </p>
+                            </article>
 
                         </article>
 
