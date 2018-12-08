@@ -216,6 +216,13 @@ class ZoningMap extends React.Component {
                             </FormCheck>
                         </Col>
                     </Row>
+                    <Row>
+                        <Col textAlign="center">
+                            <footer>
+                                &#169; 2018 FutureSense Technologies
+                            </footer>
+                        </Col>
+                    </Row>
                 </Grid>
 
             </StyledMap>
