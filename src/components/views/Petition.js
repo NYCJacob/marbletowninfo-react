@@ -17,7 +17,7 @@ import {
 } from "@smooth-ui/core-sc";
 
 const sendSubmit = async (values) => {
-    fetch('http://localhost:8080/mailHandler.php', {
+    fetch('/backend/api/mailHandler.php', {
         method: 'POST',
         headers: new Headers({
             'Content-Type': 'application/x-www-form-urlencoded', // <-- Specifying the Content-Type for post

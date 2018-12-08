@@ -146,19 +146,12 @@ class ZoningMap extends React.Component {
         this.map.on('mousemove', (e) => {
             const features = this.map.queryRenderedFeatures(e.point);
             if (features && features[0]){
-                console.log( features[0].properties );
                 this.setState({
                     parcelDetails: features[0].properties
                 })
             }
         });
-    }
-
-    toggleLayer() {
-        if (!this.state.agDistricts) {
-            this.setState({
-                agDistricts : this.state.agDistricts
-            });
+        this.map.on('load', (e) => {
             this.map.addLayer({
                 "id": "agdistricts",
                 "type": "fill",
@@ -172,15 +165,27 @@ class ZoningMap extends React.Component {
                     'fill-color': 'rgba(61,153,80,0.55)'
                 }
             });
-        } else {
-            this.map.removeLayer("agdistricts");
-        }
+            this.map.setLayoutProperty('agdistricts', 'visibility', 'none');
+        });
+    }
 
+    toggleLayer() {
+        if (!this.state.agDistricts) {
+            this.setState({
+                agDistricts : true
+            });
+            this.map.setLayoutProperty('agdistricts', 'visibility', 'visible');
+
+        } else {
+            this.map.setLayoutProperty('agdistricts', 'visibility', 'none');
+            this.setState({
+                agDistricts : false
+            });
+        }
     }
 
     componentDidMount() {
             this.loadMap();
-
     }
 
     render(){
@@ -203,7 +208,7 @@ class ZoningMap extends React.Component {
                     <AcreLegend/>
                     <Row>
                         <Col >
-                            <FormCheck>
+                            <FormCheck color="red">
                                 <Switch id="agDist" labeled onClick={this.toggleLayer} />
                                 <FormCheckLabel htmlFor="agDist">
                                     Show Agriculture Districts Overlay

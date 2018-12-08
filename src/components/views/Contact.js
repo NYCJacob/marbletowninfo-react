@@ -18,15 +18,19 @@ import {
 
 
 const sendSubmit = async (values) => {
-    fetch('http://localhost:8080/mailHandler.php', {
+    fetch('/backend/api/mailHandler.php', {
         method: 'POST',
         headers: new Headers({
             'Content-Type': 'application/x-www-form-urlencoded', // <-- Specifying the Content-Type for post
         }),
         body: `formCode=1&fullName=${values.fullName}&` +
             `email=${values.email}&message=${values.message}&updates=${values.updates}`
-    }).then(res=>res.json())
-        .then(res => console.log(res));
+    }).then( function (response) {
+        if(response.ok){
+            return response.blob();
+        }
+        throw new Error('Network response error')
+    });
 };
 
 const Error = ({ name }) => (

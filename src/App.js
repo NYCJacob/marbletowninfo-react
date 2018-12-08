@@ -11,8 +11,11 @@ import TownBoard from "./components/views/TownBoard";
 import CensusView from "./components/views/CensusView";
 import EventLaw from "./components/views/EventLaw";
 import Petition from "./components/views/Petition";
-import ProposedAccAptSup from "./components/views/ProposedAccAptSup";
+// import ProposedAccAptSup from "./components/views/ProposedAccAptSup";
+import AccAptStatus from "./components/views/AccAptStatus";
 import Contact from "./components/views/Contact";
+import LocalLawTwo from "./components/views/Nov2018LLTwoproposed";
+import SevReport from "./components/views/SevReport"
 
 
 const NoMatch = () => <div><h3>This is not the page you were looking for.</h3></div>
@@ -41,12 +44,14 @@ class App extends Component {
                             </Helmet>
                             <Switch>
                                 <Route exact path="/" component={ZoningMap}/>
+                                <Route exact path="/lltwo" component={LocalLawTwo}/>
+                                <Route exact path="/sev" component={SevReport}/>
                                 <Route path="/census" component={CensusView}/>
                                 <Route path="/townboard" component={TownBoard}/>
                                 <Route path="/proposedlaws/events" component={EventLaw}/>
                                 <Route path="/petition" component={Petition}/>
                                 <Route path="/contact" component={Contact}/>
-                                <Route path="/proposedlaws/accaptsup" component={ProposedAccAptSup}/>
+                                <Route path="/proposedlaws/accaptsup" component={AccAptStatus}/>
                                 <Route component={NoMatch}/>
                             </Switch>
                     </Grid>

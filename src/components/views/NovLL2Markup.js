@@ -1,11 +1,9 @@
-import React, {Component} from 'react'
+import React, {Component} from "react";
 import styled from "styled-components";
-import { AccAptSupHtml } from "./NovLL2Markup"
-import  AccAptStatus from "./AccAptStatus"
+import { NovLL2Html } from "./NovLL2MarkupHtml"
 
 
-const StyledProposedAccAptSup = styled.section`
-
+export const StyledNovLL2Markup = styled.section`
         .sup-title {
             background: white;
             color: black;
@@ -42,17 +40,16 @@ const StyledProposedAccAptSup = styled.section`
         .moved {
              background: yellow;
          }
-`
+`;
 
-class ProposedAccAptSup extends Component {
+class NovLL2Markup extends Component {
     render() {
-        return (
-            <StyledProposedAccAptSup>
-                {/*<AccAptSupHtml/>*/}
-                <AccAptStatus/>
-            </StyledProposedAccAptSup>
-    )
+        return(
+            <StyledNovLL2Markup>
+                <NovLL2Html/>
+            </StyledNovLL2Markup>
+        )
     }
 }
 
-export default ProposedAccAptSup
+export default NovLL2Markup;

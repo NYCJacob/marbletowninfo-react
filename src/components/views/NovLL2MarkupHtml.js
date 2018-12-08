@@ -1,6 +1,6 @@
 import React from "react";
 
-export const AccAptSupHtml = () =>
+export const NovLL2Html = () =>
     <section>
         <div className="barTitle sectionTitle 6183893"
              id="6183893" data-guid="6183893">
@@ -331,7 +331,7 @@ export const AccAptSupHtml = () =>
                     </td>
                     <td align="left" className="entry borderBottom" startcol="14" valign="top">
                         <div className="para" >§ <a className="xref" guid="6184053"
-                                                            href="6184053#6184053">200-38</a>
+                                                    href="6184053#6184053">200-38</a>
                         </div>
                     </td>
                 </tr>
@@ -372,7 +372,7 @@ export const AccAptSupHtml = () =>
                     </td>
                     <td align="left" className="entry borderBottom" startcol="14" valign="top">
                         <div className="para" >§ <a className="xref" guid="6184053"
-                                                            href="6184053#6184053">200-38</a>
+                                                    href="6184053#6184053">200-38</a>
                         </div>
                     </td>
                 </tr>
@@ -414,7 +414,7 @@ export const AccAptSupHtml = () =>
                     </td>
                     <td align="left" className="entry borderBottom" startcol="14" valign="top">
                         <div className="para" >§§ <a className="xref" guid="6184053"
-                                                             href="6184053#6184053">200-38</a>
+                                                     href="6184053#6184053">200-38</a>
                             and <a className="xref" guid="6184245" href="6184245#6184245">200-46D(1)</a></div>
                     </td>
                 </tr>
@@ -521,7 +521,7 @@ export const AccAptSupHtml = () =>
                     </td>
                     <td align="left" className="entry borderBottom" startcol="14" valign="top">
                         <div className="para" >§ <a className="xref" guid="6184053"
-                                                            href="6184053#6184053">200-38</a>
+                                                    href="6184053#6184053">200-38</a>
                         </div>
                     </td>
                 </tr>
@@ -557,7 +557,7 @@ export const AccAptSupHtml = () =>
                         <div className="para" ><span>P</span></div>
                     </td>
                     <td align="center" className="entry borderRight borderBottom" startcol="11" valign="top">
-                        <div className="para" >SU</div>
+                        <div className="para" >P</div>
                     </td>
                     <td align="center" className="entry borderRight borderBottom" startcol="12" valign="top">
                         <div className="para" ><span className="new">P</span></div>
@@ -609,9 +609,7 @@ export const AccAptSupHtml = () =>
                         <div className="para" >X</div>
                     </td>
                     <td align="left" className="entry borderBottom" startcol="14" valign="top">
-                        <div className="para" >§ <a className="xref" guid="6184053"
-                                                            href="6184053#6184053">200-38C(3)(a)(b)</a>
-                        </div>
+                        <div className="para" >§200-38C(3)(a)(b)</div>
                     </td>
                 </tr>
                 <tr className="new">
@@ -694,7 +692,7 @@ export const AccAptSupHtml = () =>
                         <div className="para" >P</div>
                     </td>
                     <td align="left" className="entry borderBottom" startcol="14" valign="top">
-                        <div className="para" >P</div>
+                        <div className="para" >§ 200-38B(2)</div>
                     </td>
                 </tr>
                 <tr className="new">
@@ -737,9 +735,7 @@ export const AccAptSupHtml = () =>
                         <div className="para" >P</div>
                     </td>
                     <td align="left" className="entry borderBottom" startcol="14" valign="top">
-                        <div className="para" >§ <a className="xref" guid="6184053"
-                                                            href="6184053#6184053">200-38C(3)(a)(b)</a>
-                        </div>
+                        <div className="para" >§ 200-38B(3)</div>
                     </td>
                 </tr>
                 <tr className="new outsideAg">
@@ -861,7 +857,7 @@ export const AccAptSupHtml = () =>
                     </td>
                     <td align="left" className="entry borderBottom" startcol="14" valign="top">
                         <div className="para" >§ <a className="xref" guid="6184053"
-                                                            href="6184053#6184053">200-38</a>
+                                                    href="6184053#6184053">200-38</a>
                         </div>
                     </td>
                 </tr>
@@ -906,7 +902,7 @@ export const AccAptSupHtml = () =>
                     </td>
                     <td align="left" className="entry borderBottom" startcol="14" valign="top">
                         <div className="para" >§ <a className="xref" guid="6184053"
-                                                            href="6184053#6184053">200-38</a>
+                                                    href="6184053#6184053">200-38</a>
                         </div>
                     </td>
                 </tr>
@@ -957,7 +953,7 @@ export const AccAptSupHtml = () =>
                     </td>
                     <td align="left" className="entry borderBottom" startcol="14" valign="top">
                         <div className="para" >§§ <a className="xref" guid="6184053"
-                                                             href="6184053#6184053">200-38</a>
+                                                     href="6184053#6184053">200-38</a>
                             and <a className="xref" guid="6184245" href="6184245#6184245">200-46D(1)</a></div>
                     </td>
                 </tr>
@@ -1046,7 +1042,7 @@ export const AccAptSupHtml = () =>
                     </td>
                     <td align="left" className="entry borderBottom" startcol="14" valign="top">
                         <div className="para" >§ <a className="xref" guid="6184053"
-                                                            href="6184053#6184053">200-38</a>
+                                                    href="6184053#6184053">200-38</a>
                         </div>
                     </td>
                 </tr>
@@ -1138,7 +1134,7 @@ export const AccAptSupHtml = () =>
                     </td>
                     <td align="left" className="entry borderBottom" startcol="14" valign="top">
                         <div className="para" >§ <a className="xref" guid="6184053"
-                                                            href="6184053#6184053">200-38</a>
+                                                    href="6184053#6184053">200-38</a>
                         </div>
                     </td>
                 </tr>
@@ -1183,7 +1179,7 @@ export const AccAptSupHtml = () =>
                     </td>
                     <td align="left" className="entry borderBottom" startcol="14" valign="top">
                         <div className="para" >§ <a className="xref" guid="6184053"
-                                                            href="6184053#6184053">200-38</a>
+                                                    href="6184053#6184053">200-38</a>
                         </div>
                     </td>
                 </tr>
@@ -1228,7 +1224,7 @@ export const AccAptSupHtml = () =>
                     </td>
                     <td align="left" className="entry borderBottom" startcol="14" valign="top">
                         <div className="para" >§ <a className="xref" guid="6184053"
-                                                            href="6184053#6184053">200-38</a>
+                                                    href="6184053#6184053">200-38</a>
                         </div>
                     </td>
                 </tr>
@@ -1549,7 +1545,7 @@ export const AccAptSupHtml = () =>
                     <td align="left" className="entry blankCell2 borderRight borderBottom" colspan="2"
                         spanname="blankCell2" startcol="2" valign="top">
                         <div className="para" >Hotel, as defined in Article <a className="xref" guid="6184705"
-                                                                                       href="6184705#6184705">IV</a>
+                                                                               href="6184705#6184705">IV</a>
                         </div>
                     </td>
                     <td align="center" className="entry borderRight borderBottom" startcol="4" valign="top">
@@ -1584,7 +1580,7 @@ export const AccAptSupHtml = () =>
                     </td>
                     <td align="left" className="entry borderBottom" startcol="14" valign="top">
                         <div className="para" >§ <a className="xref" guid="6184255"
-                                                            href="6184255#6184255">200-46D(3)</a>
+                                                    href="6184255#6184255">200-46D(3)</a>
                         </div>
                     </td>
                 </tr>
@@ -1596,7 +1592,7 @@ export const AccAptSupHtml = () =>
                     <td align="left" className="entry blankCell2 borderRight borderBottom" colspan="2"
                         spanname="blankCell2" startcol="2" valign="top">
                         <div className="para" >Motel, as defined in Article <a className="xref" guid="6184705"
-                                                                                       href="6184705#6184705">IV</a>
+                                                                               href="6184705#6184705">IV</a>
                         </div>
                     </td>
                     <td align="center" className="entry borderRight borderBottom" startcol="4" valign="top">
@@ -1631,7 +1627,7 @@ export const AccAptSupHtml = () =>
                     </td>
                     <td align="left" className="entry borderBottom" startcol="14" valign="top">
                         <div className="para" >§ <a className="xref" guid="6184255"
-                                                            href="6184255#6184255">200-46D(3)</a>
+                                                    href="6184255#6184255">200-46D(3)</a>
                         </div>
                     </td>
                 </tr>
@@ -1677,7 +1673,7 @@ export const AccAptSupHtml = () =>
                     </td>
                     <td align="left" className="entry borderBottom" startcol="14" valign="top">
                         <div className="para" >§ <a className="xref" guid="6184255"
-                                                            href="6184255#6184255">200-46D(3)</a>
+                                                    href="6184255#6184255">200-46D(3)</a>
                         </div>
                     </td>
                 </tr>
@@ -1722,7 +1718,7 @@ export const AccAptSupHtml = () =>
                     </td>
                     <td align="left" className="entry borderBottom" startcol="14" valign="top">
                         <div className="para" >§ <a className="xref" guid="6184255"
-                                                            href="6184255#6184255">200-46D(3)</a>
+                                                    href="6184255#6184255">200-46D(3)</a>
                         </div>
                     </td>
                 </tr>
@@ -1767,7 +1763,7 @@ export const AccAptSupHtml = () =>
                     </td>
                     <td align="left" className="entry borderBottom" startcol="14" valign="top">
                         <div className="para" >§§ <a className="xref" guid="6184259"
-                                                             href="6184259#6184259">200-46D(4)</a>
+                                                     href="6184259#6184259">200-46D(4)</a>
                             and <a className="xref" guid="6184283" href="6184283#6184283">200-46D(8)</a></div>
                     </td>
                 </tr>
@@ -1852,7 +1848,7 @@ export const AccAptSupHtml = () =>
                     </td>
                     <td align="left" className="entry borderBottom" startcol="14" valign="top">
                         <div className="para" >§ <a className="xref" guid="6184264"
-                                                            href="6184264#6184264">200-46D(5)</a>
+                                                    href="6184264#6184264">200-46D(5)</a>
                         </div>
                     </td>
                 </tr>
@@ -1864,8 +1860,8 @@ export const AccAptSupHtml = () =>
                     <td align="left" className="entry blankCell2 borderRight borderBottom" colspan="2"
                         spanname="blankCell2" startcol="2" valign="top">
                         <div className="para" >Dormitory, as defined in Article <a className="xref"
-                                                                                           guid="6184705"
-                                                                                           href="6184705#6184705">IV</a>
+                                                                                   guid="6184705"
+                                                                                   href="6184705#6184705">IV</a>
                         </div>
                     </td>
                     <td align="center" className="entry borderRight borderBottom" startcol="4" valign="top">
@@ -1900,7 +1896,7 @@ export const AccAptSupHtml = () =>
                     </td>
                     <td align="left" className="entry borderBottom" startcol="14" valign="top">
                         <div className="para" >§ <a className="xref" guid="6184264"
-                                                            href="6184264#6184264">200-46D(5)</a>
+                                                    href="6184264#6184264">200-46D(5)</a>
                         </div>
                     </td>
                 </tr>
@@ -2167,7 +2163,7 @@ export const AccAptSupHtml = () =>
                     </td>
                     <td align="left" className="entry borderBottom" startcol="14" valign="top">
                         <div className="para" >§ <a className="xref" guid="6184128"
-                                                            href="6184128#6184128">200-40</a>
+                                                    href="6184128#6184128">200-40</a>
                         </div>
                     </td>
                 </tr>
@@ -2384,7 +2380,7 @@ export const AccAptSupHtml = () =>
                     </td>
                     <td align="left" className="entry borderBottom" startcol="14" valign="top">
                         <div className="para" >§ <a className="xref" guid="6184311"
-                                                            href="6184311#6184311">200-46D(14)</a>
+                                                    href="6184311#6184311">200-46D(14)</a>
                         </div>
                     </td>
                 </tr>
@@ -2686,7 +2682,7 @@ export const AccAptSupHtml = () =>
                     </td>
                     <td align="left" className="entry borderBottom" startcol="14" valign="top">
                         <div className="para" >§§ <a className="xref" guid="6184142"
-                                                             href="6184142#6184142">200-40D</a>
+                                                     href="6184142#6184142">200-40D</a>
                             and <a className="xref" guid="6184134" href="6184134#6184134">C</a></div>
                     </td>
                 </tr>
@@ -2731,7 +2727,7 @@ export const AccAptSupHtml = () =>
                     </td>
                     <td align="left" className="entry borderBottom" startcol="14" valign="top">
                         <div className="para" >§§ <a className="xref" guid="6184052"
-                                                             href="6184052#6184052">200-37</a>
+                                                     href="6184052#6184052">200-37</a>
                             and <a className="xref" guid="6184114" href="6184114#6184114">200-39D</a>, <a
                                 className="xref" guid="6184126" href="6184126#6184126">H</a> and <a className="xref"
                                                                                                     guid="6184127"
@@ -2823,7 +2819,7 @@ export const AccAptSupHtml = () =>
                     </td>
                     <td align="left" className="entry borderBottom" startcol="14" valign="top">
                         <div className="para" >§ <a className="xref" guid="6184234"
-                                                            href="6184234#6184234">200-44</a>
+                                                    href="6184234#6184234">200-44</a>
                         </div>
                     </td>
                 </tr>
@@ -3305,7 +3301,7 @@ export const AccAptSupHtml = () =>
                     </td>
                     <td align="left" className="entry borderBottom" startcol="14" valign="top">
                         <div className="para" >§ <a className="xref" guid="6184033"
-                                                            href="6184033#6184033">200-30</a>
+                                                    href="6184033#6184033">200-30</a>
                         </div>
                     </td>
                 </tr>
@@ -3317,8 +3313,8 @@ export const AccAptSupHtml = () =>
                     <td align="left" className="entry blankCell2 borderRight borderBottom" colspan="2"
                         spanname="blankCell2" startcol="2" valign="top">
                         <div className="para" >Accessory apartment, as defined in Article <a className="xref"
-                                                                                                     guid="6184705"
-                                                                                                     href="6184705#6184705">IV</a>
+                                                                                             guid="6184705"
+                                                                                             href="6184705#6184705">IV</a>
                         </div>
                     </td>
                     <td align="center" className="entry borderRight borderBottom" startcol="4" valign="top">
@@ -3353,7 +3349,7 @@ export const AccAptSupHtml = () =>
                     </td>
                     <td align="left" className="entry borderBottom" startcol="14" valign="top">
                         <div className="para" >§ <a className="xref" guid="6184314"
-                                                            href="6184314#6184314">200-46D(15)</a>
+                                                    href="6184314#6184314">200-46D(15)</a>
                         </div>
                     </td>
                 </tr>
@@ -3490,7 +3486,7 @@ export const AccAptSupHtml = () =>
                     </td>
                     <td align="left" className="entry borderBottom" startcol="14" valign="top">
                         <div className="para" >§ <a className="xref" guid="6184239"
-                                                            href="6184239#6184239">200-46C</a>
+                                                    href="6184239#6184239">200-46C</a>
                         </div>
                     </td>
                 </tr>
@@ -3535,7 +3531,7 @@ export const AccAptSupHtml = () =>
                     </td>
                     <td align="left" className="entry borderBottom" startcol="14" valign="top">
                         <div className="para" >§§ <a className="xref" guid="6184049"
-                                                             href="6184049#6184049">200-34</a>
+                                                     href="6184049#6184049">200-34</a>
                             and <a className="xref" guid="6184006" href="6184006#6184006">200-22D</a></div>
                     </td>
                 </tr>
@@ -3580,7 +3576,7 @@ export const AccAptSupHtml = () =>
                     </td>
                     <td align="left" className="entry borderBottom" startcol="14" valign="top">
                         <div className="para" >§ <a className="xref" guid="6184072"
-                                                            href="6184072#6184072">200-39</a>
+                                                    href="6184072#6184072">200-39</a>
                         </div>
                     </td>
                 </tr>
@@ -3708,7 +3704,7 @@ export const AccAptSupHtml = () =>
                     </td>
                     <td align="left" className="entry borderBottom" startcol="14" valign="top">
                         <div className="para" >§ <a className="xref" guid="6184049"
-                                                            href="6184049#6184049">200-34</a>
+                                                    href="6184049#6184049">200-34</a>
                         </div>
                     </td>
                 </tr>
@@ -3756,7 +3752,7 @@ export const AccAptSupHtml = () =>
                     </td>
                     <td align="left" className="entry borderBottom" startcol="14" valign="top">
                         <div className="para" >§ <a className="xref" guid="6184117"
-                                                            href="6184117#6184117">200-39D(3)</a>
+                                                    href="6184117#6184117">200-39D(3)</a>
                         </div>
                     </td>
                 </tr>
