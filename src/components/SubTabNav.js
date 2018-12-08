@@ -46,6 +46,12 @@ const StyledSubTab = styled.div`
     background-color: rgba(0,0,0,0.05);
 }
 
+
+.rwt__tab[aria-selected="false"] {
+
+  border: solid 1px #ffad2c;
+}
+
 .rwt__tab[aria-selected="true"] {
     position: relative;
     font-weight: bold;

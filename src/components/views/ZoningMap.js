@@ -29,11 +29,11 @@ const StyledMap = styled.div`
     
     .map-overlay {
         position: absolute;
-        top: 30vh;
+        top: 28vh;
         // height: 20vh;
         min-height: 10vh;
         background: rgba(255, 255, 255, 0.8);
-        margin-right: 0px;
+        margin-right: 5px;
         font-family: Arial, sans-serif;
         overflow: auto;
         border-radius: 3px;
@@ -43,7 +43,7 @@ const StyledMap = styled.div`
         top: 0;
         // height: 100px;
         margin-top: 5em;
-        width: 20vw;
+        width: 18vw;
         float: right;
         margin-bottom: 1em;
     }
@@ -200,15 +200,15 @@ class ZoningMap extends React.Component {
 
 
                     <Row>
-                        <Col>
+                        <Col border="1px solid #40617F" p={0}>
                             <div ref={el => this.mapContainer = el} id="mapGL"></div>
                         </Col>
                     </Row>
                     <MapOverlay details={ this.state.parcelDetails } />
                     <AcreLegend/>
                     <Row>
-                        <Col >
-                            <FormCheck color="red">
+                        <Col background="#40617F">
+                            <FormCheck color="white" fontWeight="bold">
                                 <Switch id="agDist" labeled onClick={this.toggleLayer} />
                                 <FormCheckLabel htmlFor="agDist">
                                     Show Agriculture Districts Overlay
