@@ -88,7 +88,9 @@ export const ZoneLegend = () => (
                     {({ toggled, onToggle}) => (
                         <StyledDivButton className="modal-wrapper">
                             <StyledZoneButton onClick={() => onToggle(true)}>
-                                <i className="fal fa-question-circle"></i>
+                                <span style={{fontWeight: "bold", fontSize: "1.2em"}}>
+                                    <i className="fal fa-question-circle" style={{paddingRight: "0"}}></i>
+                                </span>
                                 <Typography>Zone Colors:
                                 </Typography>
                             </StyledZoneButton>

@@ -1,7 +1,14 @@
 import React from "react";
 import {Component} from "react";
 import styled from "styled-components";
-import { Grid, Col, Row} from '@smooth-ui/core-sc';
+import { Grid, Col, Row, Typography, Button,
+    Toggler,
+    Modal,
+    ModalDialog,
+    ModalContent,
+    ModalHeader, ModalBody, ModalFooter
+} from '@smooth-ui/core-sc';
+import { sevcomments} from "./SevCommentData";
 
 const StyledSevReport = styled.section`
   article * {
@@ -33,6 +40,33 @@ class SevReport extends Component {
                                 Subcommittee, and it met several times during the summer. The following provides a summary of
                                 the events and background which led to the decision to charter this group, as well as the results of
                                 their deliberations.
+                                    <Toggler>
+                                        {({ toggled, onToggle }) => (
+                                            <span>
+                                                <i className=" far fa-comment" style={{color: "red", fontSize: "1.3em", paddingLeft: "0.5em"}}
+                                                        onClick={() => onToggle(true)}></i>
+                                                <Modal opened={toggled} onClose={() => onToggle(false)}>
+                                                    <ModalDialog>
+                                                        <ModalContent>
+                                                            <ModalHeader>
+                                                                <Typography variant="h5" m={0}>
+                                                                    Town Board Approval
+                                                                </Typography>
+                                                            </ModalHeader>
+                                                            <ModalBody lineHeight={2}>
+                                                                {sevcomments.A}
+                                                            </ModalBody>
+                                                            <ModalFooter>
+                                                                <Button variant="secondary" onClick={() => onToggle(false)}>
+                                                                    Close
+                                                                </Button>
+                                                            </ModalFooter>
+                                                        </ModalContent>
+                                                    </ModalDialog>
+                                                </Modal>
+                                            </span>
+                                        ) }
+                                    </Toggler>
                             </p>
                             <p><span className="bold">Regional Growth of Special Event Venues:</span>
                                 Over the past several years there has been an increasing
@@ -40,6 +74,34 @@ class SevReport extends Component {
                                 land in Ulster County. Many local communities have created regulations to control this use, as
                                 existing legislation fails to provide clear guidance on how community quality of life will be
                                 protected if they are allowed.
+                                <Toggler>
+                                    {({ toggled, onToggle }) => (
+                                        <span>
+                                                <i className=" far fa-comment" style={{color: "red", fontSize: "1.3em", paddingLeft: "0.5em"}}
+                                                   onClick={() => onToggle(true)}></i>
+                                                <Modal opened={toggled} onClose={() => onToggle(false)}>
+                                                    <ModalDialog>
+                                                        <ModalContent>
+                                                            <ModalHeader>
+                                                                <Typography variant="h5" m={0}>
+                                                                    Many Other Towns?
+                                                                </Typography>
+                                                            </ModalHeader>
+                                                            <ModalBody lineHeight={2}>
+                                                                {sevcomments.B}
+                                                            </ModalBody>
+                                                            <ModalFooter>
+                                                                <Button variant="secondary" onClick={() => onToggle(false)}>
+                                                                    Close
+                                                                </Button>
+                                                            </ModalFooter>
+                                                        </ModalContent>
+                                                    </ModalDialog>
+
+                                                </Modal>
+                                            </span>
+                                    ) }
+                                </Toggler>
                             </p>
                             <p><span className="bold">Special Event Venues in Marbletown:</span></p>
                             <p><span className="bold">History of use.</span>
@@ -52,7 +114,36 @@ class SevReport extends Component {
                                 of the Code Enforcement Officer’s classification of the use as a Limited Service Eating
                                 Establishment. The Zoning Board of Appeals upheld the Appeal thereby creating a situation
                                 where there was no legal use in the Schedule of Use Regulations that allowed an
-                                application to be processed. As a result, legal counsel for Marbletown recommended the
+                                application to be processed.
+                                <Toggler>
+                                    {({ toggled, onToggle }) => (
+                                        <span>
+                                                <i className=" far fa-comment" style={{color: "red", fontSize: "1.3em", paddingLeft: "0.2em", paddingRight: "0.3em"}}
+                                                   onClick={() => onToggle(true)}></i>
+                                                <Modal opened={toggled} onClose={() => onToggle(false)}>
+                                                    <ModalDialog>
+                                                        <ModalContent>
+                                                            <ModalHeader>
+                                                                <Typography variant="h5" m={0}>
+                                                                    Pre-Appeal Permits
+                                                                </Typography>
+                                                            </ModalHeader>
+                                                            <ModalBody lineHeight={2}>
+                                                                {sevcomments.C}
+                                                            </ModalBody>
+                                                            <ModalFooter>
+                                                                <Button variant="secondary" onClick={() => onToggle(false)}>
+                                                                    Close
+                                                                </Button>
+                                                            </ModalFooter>
+                                                        </ModalContent>
+                                                    </ModalDialog>
+
+                                                </Modal>
+                                            </span>
+                                    ) }
+                                </Toggler>
+                                As a result, legal counsel for Marbletown recommended the
                                 development of legislation to define the use and requirements for SEV. This
                                 recommendation as well as the decision by several landowners to hold SEVs on their land
                                 without attempting to obtain permits (due to their concern over the difficulty of obtaining
@@ -60,6 +151,34 @@ class SevReport extends Component {
                                 districts, led to an increased demand to understand community concerns and carefully
                                 regulate the use under a new section of Chapter 200-8, Schedule of Uses of the zoning code
                                 entitled: Arts, Entertainment and Recreation.
+                                <Toggler>
+                                    {({ toggled, onToggle }) => (
+                                        <span>
+                                                <i className=" far fa-comment" style={{color: "red", fontSize: "1.3em", paddingLeft: "0.2em", paddingRight: "0.3em"}}
+                                                   onClick={() => onToggle(true)}></i>
+                                                <Modal opened={toggled} onClose={() => onToggle(false)}>
+                                                    <ModalDialog>
+                                                        <ModalContent>
+                                                            <ModalHeader>
+                                                                <Typography variant="h5" m={0}>
+                                                                    Events being held without permits
+                                                                </Typography>
+                                                            </ModalHeader>
+                                                            <ModalBody lineHeight={2}>
+                                                                {sevcomments.D}
+                                                            </ModalBody>
+                                                            <ModalFooter>
+                                                                <Button variant="secondary" onClick={() => onToggle(false)}>
+                                                                    Close
+                                                                </Button>
+                                                            </ModalFooter>
+                                                        </ModalContent>
+                                                    </ModalDialog>
+
+                                                </Modal>
+                                            </span>
+                                    ) }
+                                </Toggler>
                             </p>
                             <p><span className="bold">Public Concerns About SEVs.</span>
                                 Marbletown citizens have expressed trepidation about
@@ -76,6 +195,34 @@ class SevReport extends Component {
                                 buyers would go elsewhere, thus reducing the value of Marbletown residential properties
                                 and associated tax base. These concerns were specifically true for districts identified in the
                                 zoning code as “residential.”
+                                <Toggler>
+                                    {({ toggled, onToggle }) => (
+                                        <span>
+                                                <i className=" far fa-comment" style={{color: "red", fontSize: "1.3em", paddingLeft: "0.2em", paddingRight: "0.3em"}}
+                                                   onClick={() => onToggle(true)}></i>
+                                                <Modal opened={toggled} onClose={() => onToggle(false)}>
+                                                    <ModalDialog>
+                                                        <ModalContent>
+                                                            <ModalHeader>
+                                                                <Typography variant="h5" m={0}>
+                                                                    Public Concerns Voiced to Subcommittee
+                                                                </Typography>
+                                                            </ModalHeader>
+                                                            <ModalBody lineHeight={2}>
+                                                                {sevcomments.E}
+                                                            </ModalBody>
+                                                            <ModalFooter>
+                                                                <Button variant="secondary" onClick={() => onToggle(false)}>
+                                                                    Close
+                                                                </Button>
+                                                            </ModalFooter>
+                                                        </ModalContent>
+                                                    </ModalDialog>
+
+                                                </Modal>
+                                            </span>
+                                    ) }
+                                </Toggler>
                             </p>
                             <p>
                                 The public’s trepidation was reflected in the Subcommittee on SEV even for large tracks of
@@ -96,13 +243,12 @@ class SevReport extends Component {
                                 respects, very carefully....” (Comments from Gary Johnson).
                             </p>
                             <p><span className="bold">Special Event Venue Legislation Planning:</span>
-                                In 2017 the Marbletown Planning and Zoning Committee
-                                hired Dan Shuster, an experience professional planner to generate a draft of legislation to regulate
-                                special event venues. Mr. Shuster proposes to define Special Event Venues as: “The limited use of
-                                a parcel or part of a parcel of land, for celebratory, cultural or educational activities such as
-                                concerts, conferences, banquets, festivals, weddings, or other similar activities, subject to the
-                                standards and criteria set forth in §200-46 D. (18). Permitted activities at such venues shall not
-                                include retail sale of new or used merchandise).”
+                                In 2017 the Marbletown Planning and Zoning Committee hired Dan Shuster, an experience professional planner
+                                to generate a draft of legislation to regulate special event venues. Mr. Shuster proposes to define
+                                Special Event Venues as: “The limited use of a parcel or part of a parcel of land, for celebratory,
+                                cultural or educational activities such as concerts, conferences, banquets, festivals, weddings,
+                                or other similar activities, subject to the standards and criteria set forth in §200-46 D. (18).
+                                Permitted activities at such venues shall not include retail sale of new or used merchandise).”
                                 <br/>
                                 Mr. Shuster provided the following as rationale to consider for including SEV use in the local zoning
                                 code:
@@ -125,6 +271,34 @@ class SevReport extends Component {
                                 effects of the special venue events that can affect the residential character and natural environment
                                 of surrounding area. These potential effects include traffic, noise, frequency and duration of events,
                                 lighting and number of attendees.
+                                <Toggler>
+                                    {({ toggled, onToggle }) => (
+                                        <span>
+                                                <i className=" far fa-comment" style={{color: "red", fontSize: "1.3em", paddingLeft: "0.2em", paddingRight: "0.3em"}}
+                                                   onClick={() => onToggle(true)}></i>
+                                                <Modal opened={toggled} onClose={() => onToggle(false)}>
+                                                    <ModalDialog>
+                                                        <ModalContent>
+                                                            <ModalHeader>
+                                                                <Typography variant="h5" m={0}>
+                                                                    Preservation of Open Space and Farmland
+                                                                </Typography>
+                                                            </ModalHeader>
+                                                            <ModalBody lineHeight={2}>
+                                                                {sevcomments.F}
+                                                            </ModalBody>
+                                                            <ModalFooter>
+                                                                <Button variant="secondary" onClick={() => onToggle(false)}>
+                                                                    Close
+                                                                </Button>
+                                                            </ModalFooter>
+                                                        </ModalContent>
+                                                    </ModalDialog>
+
+                                                </Modal>
+                                            </span>
+                                    ) }
+                                </Toggler>
                             </p>
                             <p><span className="bold">Establishing an Advisory Board on SEVs</span>
                                 The town of Marbletown decided in the spring of 2018 to
@@ -165,6 +339,34 @@ class SevReport extends Component {
                                 Accordingly, Subcommittee progress was severely hindered until it was decided to create “working
                                 groups” comprised of board members and have them work in other areas of the building with press
                                 participation but without public participation.
+                                <Toggler>
+                                    {({ toggled, onToggle }) => (
+                                        <span>
+                                                <i className=" far fa-comment" style={{color: "red", fontSize: "1.3em", paddingLeft: "0.2em", paddingRight: "0.3em"}}
+                                                   onClick={() => onToggle(true)}></i>
+                                                <Modal opened={toggled} onClose={() => onToggle(false)}>
+                                                    <ModalDialog>
+                                                        <ModalContent>
+                                                            <ModalHeader>
+                                                                <Typography variant="h5" m={0}>
+                                                                    Public Participation
+                                                                </Typography>
+                                                            </ModalHeader>
+                                                            <ModalBody lineHeight={2}>
+                                                                {sevcomments.G}
+                                                            </ModalBody>
+                                                            <ModalFooter>
+                                                                <Button variant="secondary" onClick={() => onToggle(false)}>
+                                                                    Close
+                                                                </Button>
+                                                            </ModalFooter>
+                                                        </ModalContent>
+                                                    </ModalDialog>
+
+                                                </Modal>
+                                            </span>
+                                    ) }
+                                </Toggler>
                             </p>
                             <p><span className="bold">Committee Members. </span>
                                 There were 13 members on the SEV Sub Committee. These individuals
@@ -202,6 +404,34 @@ class SevReport extends Component {
                                 Discussion on this topic became so significant that the Chairman and Vice Chairman requested the
                                 Town Board to reiterate the Subcommittee’s obligations during the fourth meeting of the group.
                                 The Town Board provided the following comments to help the Subcommittee proceed:
+                                <Toggler>
+                                    {({ toggled, onToggle }) => (
+                                        <span>
+                                                <i className=" far fa-comment" style={{color: "red", fontSize: "1.3em", paddingLeft: "0.2em", paddingRight: "0.3em"}}
+                                                   onClick={() => onToggle(true)}></i>
+                                                <Modal opened={toggled} onClose={() => onToggle(false)}>
+                                                    <ModalDialog>
+                                                        <ModalContent>
+                                                            <ModalHeader>
+                                                                <Typography variant="h5" m={0}>
+                                                                    Evidence Considered and Ignored
+                                                                </Typography>
+                                                            </ModalHeader>
+                                                            <ModalBody lineHeight={2}>
+                                                                {sevcomments.H}
+                                                            </ModalBody>
+                                                            <ModalFooter>
+                                                                <Button variant="secondary" onClick={() => onToggle(false)}>
+                                                                    Close
+                                                                </Button>
+                                                            </ModalFooter>
+                                                        </ModalContent>
+                                                    </ModalDialog>
+
+                                                </Modal>
+                                            </span>
+                                    ) }
+                                </Toggler>
                             </p>
                             <ol>
                                 <li>“The [Sub]- committee should concentrate on reviewing and improving the draft
@@ -233,7 +463,36 @@ class SevReport extends Component {
                                 </li>
                                 <li>Review NYS Department of Tourism data to determine value of tourism for Ulster county</li>
                                 <li>Determine if there are there are lessons learned from communities that have passed similar
-                                    legislation. Communities reviewed: Hyde Park, Rochester, Union Vale, South Paul.</li>
+                                    legislation. Communities reviewed: Hyde Park, Rochester, Union Vale, South Paul.
+                                <Toggler>
+                                    {({ toggled, onToggle }) => (
+                                        <span>
+                                                <i className=" far fa-comment" style={{color: "red", fontSize: "1.3em", paddingLeft: "0.2em", paddingRight: "0.3em"}}
+                                                   onClick={() => onToggle(true)}></i>
+                                                <Modal opened={toggled} onClose={() => onToggle(false)}>
+                                                    <ModalDialog>
+                                                        <ModalContent>
+                                                            <ModalHeader>
+                                                                <Typography variant="h5" m={0}>
+                                                                    Other Towns
+                                                                </Typography>
+                                                            </ModalHeader>
+                                                            <ModalBody lineHeight={2}>
+                                                                {sevcomments.B}
+                                                            </ModalBody>
+                                                            <ModalFooter>
+                                                                <Button variant="secondary" onClick={() => onToggle(false)}>
+                                                                    Close
+                                                                </Button>
+                                                            </ModalFooter>
+                                                        </ModalContent>
+                                                    </ModalDialog>
+
+                                                </Modal>
+                                            </span>
+                                    ) }
+                                </Toggler>
+                                </li>
                                 <li>Determine challenges to the community as a result of allowing SEVs</li>
                                 <li>Determine if mitigation strategies exist for the challenges generated by SEV. As part of this
                                     requirement several other Towns SEV ordinances were reviewed, and the Chair and another
@@ -283,6 +542,34 @@ class SevReport extends Component {
                                 $1.2 billion industry, supporting 17,822 jobs. Ulster County represents 45% of the region’s tourism
                                 sales with $554 million in traveler spending. In short, well-controlled and regulated SEVs would
                                 encourage tourism and provide positive economic return.
+                                <Toggler>
+                                    {({ toggled, onToggle }) => (
+                                        <span>
+                                                <i className=" far fa-comment" style={{color: "red", fontSize: "1.3em", paddingLeft: "0.2em", paddingRight: "0.3em"}}
+                                                   onClick={() => onToggle(true)}></i>
+                                                <Modal opened={toggled} onClose={() => onToggle(false)}>
+                                                    <ModalDialog>
+                                                        <ModalContent>
+                                                            <ModalHeader>
+                                                                <Typography variant="h5" m={0}>
+                                                                    Agritourism
+                                                                </Typography>
+                                                            </ModalHeader>
+                                                            <ModalBody lineHeight={2}>
+                                                                {sevcomments.I}
+                                                            </ModalBody>
+                                                            <ModalFooter>
+                                                                <Button variant="secondary" onClick={() => onToggle(false)}>
+                                                                    Close
+                                                                </Button>
+                                                            </ModalFooter>
+                                                        </ModalContent>
+                                                    </ModalDialog>
+
+                                                </Modal>
+                                            </span>
+                                    ) }
+                                </Toggler>
                             </p>
                             <p className="bold">Findings:</p>
                             <p>
@@ -302,6 +589,34 @@ class SevReport extends Component {
                                 to regulations a means to ensure enforcement of the SEV legislation – before, during, and after the
                                 events – and a means to promulgate detailed up-to-date information about the events to the public
                                 well in advance of the date of the events and through the event duration.
+                                <Toggler>
+                                    {({ toggled, onToggle }) => (
+                                        <span>
+                                                <i className=" far fa-comment" style={{color: "red", fontSize: "1.3em", paddingLeft: "0.2em", paddingRight: "0.3em"}}
+                                                   onClick={() => onToggle(true)}></i>
+                                                <Modal opened={toggled} onClose={() => onToggle(false)}>
+                                                    <ModalDialog>
+                                                        <ModalContent>
+                                                            <ModalHeader>
+                                                                <Typography variant="h5" m={0}>
+                                                                    Agriculture/Residential Districts
+                                                                </Typography>
+                                                            </ModalHeader>
+                                                            <ModalBody lineHeight={2}>
+                                                                {sevcomments.J}
+                                                            </ModalBody>
+                                                            <ModalFooter>
+                                                                <Button variant="secondary" onClick={() => onToggle(false)}>
+                                                                    Close
+                                                                </Button>
+                                                            </ModalFooter>
+                                                        </ModalContent>
+                                                    </ModalDialog>
+
+                                                </Modal>
+                                            </span>
+                                    ) }
+                                </Toggler>
                             </p>
                             <ul>
                                 <span className="bold">Lessons learned from regional communities that have SEV regulations:</span>
@@ -321,10 +636,13 @@ class SevReport extends Component {
                                 Strategies to Reduce or Mitigate Those Concerns:
                             </p>
                             <table>
+                                <thead>
                                 <tr>
                                     <th>Concern</th>
                                     <th>Mitigations</th>
                                 </tr>
+                                </thead>
+                                <tbody>
                                 <tr>
                                     <td>
                                         <span className="bold">Noise</span>
@@ -332,6 +650,34 @@ class SevReport extends Component {
                                         SEVs will create noise that will interfere with the quality of
                                         life in the surrounding neighborhood and will reduce
                                         property values.
+                                        <Toggler>
+                                            {({ toggled, onToggle }) => (
+                                                <span>
+                                                <i className=" far fa-comment" style={{color: "red", fontSize: "1.3em", paddingLeft: "0.2em", paddingRight: "0.3em"}}
+                                                   onClick={() => onToggle(true)}></i>
+                                                <Modal opened={toggled} onClose={() => onToggle(false)}>
+                                                    <ModalDialog>
+                                                        <ModalContent>
+                                                            <ModalHeader>
+                                                                <Typography variant="h5" m={0}>
+                                                                    At What Cost
+                                                                </Typography>
+                                                            </ModalHeader>
+                                                            <ModalBody lineHeight={2}>
+                                                                {sevcomments.K}
+                                                            </ModalBody>
+                                                            <ModalFooter>
+                                                                <Button variant="secondary" onClick={() => onToggle(false)}>
+                                                                    Close
+                                                                </Button>
+                                                            </ModalFooter>
+                                                        </ModalContent>
+                                                    </ModalDialog>
+
+                                                </Modal>
+                                            </span>
+                                            ) }
+                                        </Toggler>
                                     </td>
                                     <td>
                                         <ul>
@@ -349,10 +695,36 @@ class SevReport extends Component {
                                 <tr>
                                     <td>
                                         <span className="bold">Location of SEVs.</span><br/>
-                                        SEV’s create safety concerns
-                                        for the community, create
-                                        unwanted noise and light
-                                        pollution, are a burden on MT infrastructure,
+                                        SEV’s create safety concerns for the community, create
+                                        unwanted noise and light pollution, are a burden on MT infrastructure
+                                        <Toggler>
+                                            {({ toggled, onToggle }) => (
+                                                <span>
+                                                <i className=" far fa-comment" style={{color: "red", fontSize: "1.3em", paddingLeft: "0.2em", paddingRight: "0.3em"}}
+                                                   onClick={() => onToggle(true)}></i>
+                                                <Modal opened={toggled} onClose={() => onToggle(false)}>
+                                                    <ModalDialog>
+                                                        <ModalContent>
+                                                            <ModalHeader>
+                                                                <Typography variant="h5" m={0}>
+                                                                    Zone Confusion?
+                                                                </Typography>
+                                                            </ModalHeader>
+                                                            <ModalBody lineHeight={2}>
+                                                                {sevcomments.L}
+                                                            </ModalBody>
+                                                            <ModalFooter>
+                                                                <Button variant="secondary" onClick={() => onToggle(false)}>
+                                                                    Close
+                                                                </Button>
+                                                            </ModalFooter>
+                                                        </ModalContent>
+                                                    </ModalDialog>
+
+                                                </Modal>
+                                            </span>
+                                            ) }
+                                        </Toggler>
                                     </td>
                                     <td>
                                         <ul>
@@ -376,13 +748,40 @@ class SevReport extends Component {
                                         <span className="bold">Operations.</span><br/>
                                         SEV operations reduce neighborhood quality of life,
                                         create traffic and other hazards and can’t be controlled
+                                        <Toggler>
+                                            {({ toggled, onToggle }) => (
+                                                <span>
+                                                <i className=" far fa-comment" style={{color: "red", fontSize: "1.3em", paddingLeft: "0.2em", paddingRight: "0.3em"}}
+                                                   onClick={() => onToggle(true)}></i>
+                                                <Modal opened={toggled} onClose={() => onToggle(false)}>
+                                                    <ModalDialog>
+                                                        <ModalContent>
+                                                            <ModalHeader>
+                                                                <Typography variant="h5" m={0}>
+                                                                    No Limits!?!?
+                                                                </Typography>
+                                                            </ModalHeader>
+                                                            <ModalBody lineHeight={2}>
+                                                                {sevcomments.M}
+                                                            </ModalBody>
+                                                            <ModalFooter>
+                                                                <Button variant="secondary" onClick={() => onToggle(false)}>
+                                                                    Close
+                                                                </Button>
+                                                            </ModalFooter>
+                                                        </ModalContent>
+                                                    </ModalDialog>
+
+                                                </Modal>
+                                            </span>
+                                            ) }
+                                        </Toggler>
                                     </td>
                                     <td>
                                         <ul>
                                             <li>SEV must have a plan that meets MT requirements</li>
                                             <li>All events must have the owner on site or an event
-                                                manager that has authority to act to counter concerns
-                                                identified</li>
+                                                manager that has authority to act to counter concerns identified</li>
                                             <li>Accurately dimensioned site plan with all physical
                                                 elements of the event identified
                                             </li>
@@ -402,8 +801,35 @@ class SevReport extends Component {
                                 <tr>
                                     <td>
                                         <span className="bold">Enforcement.</span><br/>
-                                        SEVs once permitted will ignore requirements. There is
-                                        no mechanism of enforcement
+                                        SEVs once permitted will ignore requirements. There is no mechanism of enforcement
+                                        <Toggler>
+                                            {({ toggled, onToggle }) => (
+                                                <span>
+                                                <i className=" far fa-comment" style={{color: "red", fontSize: "1.3em", paddingLeft: "0.2em", paddingRight: "0.3em"}}
+                                                   onClick={() => onToggle(true)}></i>
+                                                <Modal opened={toggled} onClose={() => onToggle(false)}>
+                                                    <ModalDialog>
+                                                        <ModalContent>
+                                                            <ModalHeader>
+                                                                <Typography variant="h5" m={0}>
+                                                                    Constable
+                                                                </Typography>
+                                                            </ModalHeader>
+                                                            <ModalBody lineHeight={2}>
+                                                                {sevcomments.N}
+                                                            </ModalBody>
+                                                            <ModalFooter>
+                                                                <Button variant="secondary" onClick={() => onToggle(false)}>
+                                                                    Close
+                                                                </Button>
+                                                            </ModalFooter>
+                                                        </ModalContent>
+                                                    </ModalDialog>
+
+                                                </Modal>
+                                            </span>
+                                            ) }
+                                        </Toggler>
                                     </td>
                                     <td>
                                         <ul>
@@ -415,10 +841,9 @@ class SevReport extends Component {
                                                 before with applicant.</li>
                                             <li>Hire constable or event enforcement person. Use SUP
                                                 fee to pay for constable. He or she should be on call
-                                                24/7 and the primary governmental POC for all
-                                                complaints. His or her # should be available on the web
-                                                and posted on a sign at the event. The constable must
-                                                be trained and deputized
+                                                24/7 and the primary governmental POC for all complaints.
+                                                His or her # should be available on the web and posted on a
+                                                sign at the event. The constable must be trained and deputized
                                             </li>
                                             <li>Require single point of contact from applicant for the event.
                                             </li>
@@ -440,10 +865,38 @@ class SevReport extends Component {
                                             <li>
                                                 Set up SEV website and populate with event details
                                                 and town requirements. Send letter to all neighbors.
+                                                <Toggler>
+                                                    {({ toggled, onToggle }) => (
+                                                        <span>
+                                                <i className=" far fa-comment" style={{color: "red", fontSize: "1.3em", paddingLeft: "0.2em", paddingRight: "0.3em"}}
+                                                   onClick={() => onToggle(true)}></i>
+                                                <Modal opened={toggled} onClose={() => onToggle(false)}>
+                                                    <ModalDialog>
+                                                        <ModalContent>
+                                                            <ModalHeader>
+                                                                <Typography variant="h5" m={0}>
+                                                                    Another Website
+                                                                </Typography>
+                                                            </ModalHeader>
+                                                            <ModalBody lineHeight={2}>
+                                                                {sevcomments.O}
+                                                            </ModalBody>
+                                                            <ModalFooter>
+                                                                <Button variant="secondary" onClick={() => onToggle(false)}>
+                                                                    Close
+                                                                </Button>
+                                                            </ModalFooter>
+                                                        </ModalContent>
+                                                    </ModalDialog>
+                                                </Modal>
+                                            </span>
+                                                    ) }
+                                                </Toggler>
                                             </li>
                                         </ul>
                                     </td>
                                 </tr>
+                                </tbody>
                             </table>
                             <article>
                                 <p className="bold">Committee Member’s Recommendations and Areas for Future Study:</p>
@@ -492,6 +945,34 @@ class SevReport extends Component {
                                     <li>Determine what events are exempt from EVS rules? (Church Suppers)</li>
                                     <li>Determine Insurance amounts and what types (compensation and liability on file with town)
                                     </li>
+                                    <Toggler>
+                                        {({ toggled, onToggle }) => (
+                                            <span>
+                                                <i className=" far fa-comment" style={{color: "red", fontSize: "1.3em", paddingLeft: "0.2em", paddingRight: "0.3em"}}
+                                                   onClick={() => onToggle(true)}></i>
+                                                <Modal opened={toggled} onClose={() => onToggle(false)}>
+                                                    <ModalDialog>
+                                                        <ModalContent>
+                                                            <ModalHeader>
+                                                                <Typography variant="h5" m={0}>
+                                                                    Ready or Not?
+                                                                </Typography>
+                                                            </ModalHeader>
+                                                            <ModalBody lineHeight={2}>
+                                                                {sevcomments.P}
+                                                            </ModalBody>
+                                                            <ModalFooter>
+                                                                <Button variant="secondary" onClick={() => onToggle(false)}>
+                                                                    Close
+                                                                </Button>
+                                                            </ModalFooter>
+                                                        </ModalContent>
+                                                    </ModalDialog>
+
+                                                </Modal>
+                                            </span>
+                                        ) }
+                                    </Toggler>
                                 </ul>
                                 <p className="bold">Recommended Next Steps:</p>
                                 <p>

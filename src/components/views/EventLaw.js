@@ -1,15 +1,11 @@
 import React, { Component } from 'react'
-import styled from "styled-components";
-import { Grid, Col, Row, Typography} from '@smooth-ui/core-sc';
+import { Grid, Col, Row} from '@smooth-ui/core-sc';
 import SubTabNav from "../SubTabNav";
 import {Route} from "react-router-dom";
 import OtherTowns from "./OtherTowns";
 import AprilDraftLaw from "./AprilDraftLaw";
 import EventTimeline from "./EventTimeline";
-import EventAnaylsis from "./EventAnalysis";
 import SevReport from "./SevReport";
-
-const analysis = () => <h1>coming soon!</h1>
 
 class EventLaw extends Component {
 render(){

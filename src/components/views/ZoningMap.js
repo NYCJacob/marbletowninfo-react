@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from "styled-components";
-import { Grid, Col, Row, Typography, Switch, FormCheck, FormCheckLabel} from '@smooth-ui/core-sc';
+import { Grid, Col, Row, Switch, FormCheck, FormCheckLabel} from '@smooth-ui/core-sc';
 import mapboxgl from 'mapbox-gl';
 import "../../styles/mapbox-gl.css";
 import { himitsu } from "../../api/config"

@@ -2,10 +2,6 @@ import React from 'react';
 import { Grid, Row, Col, Typography, styled, css, down } from '@smooth-ui/core-sc'
 
 
-const SubTitle = styled.div`
-
-`;
-
 const HeaderContainer = styled.h1`
 * { box-sizing: border-box; }
     //margin-bottom: 0.5em;

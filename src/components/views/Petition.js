@@ -89,7 +89,7 @@ const Petition = () => (
                         errors.zipcode = 'Required'
                     } else if (isNaN(values.zipcode)){
                         errors.zipcode = "Must be a zipcode."
-                    }else if (values.zipcode.length < 5){
+                    }else if (values.zipcode.length < 6){
                         errors.zipcode = "Must be a zipcode."
                     }
 
