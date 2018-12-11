@@ -80,7 +80,6 @@ const StyledSubTab = styled.div`
 
 
 class TabNav extends Component {
-
     render() {
         const { tabConfig }  = this.props;
 
@@ -91,13 +90,11 @@ class TabNav extends Component {
                         {tabConfig.map( (tab, index) => {
                             const tabNum = index.toString();
                             return(
-
                                 <NavLink key={index} to={tab.route}>
                                     <Tab tabFor={"sub" + tabNum}>{tab.tabText}</Tab>
                                 </NavLink>
                             )
                         })}
-
                     </TabList>
                 </Tabs>
             </StyledSubTab>

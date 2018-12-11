@@ -44,7 +44,6 @@ class App extends Component {
                             </Helmet>
                             <Switch>
                                 <Route exact path="/" component={ZoningMap}/>
-                                <Route exact path="/lltwo" component={LocalLawTwo}/>
                                 <Route exact path="/sev" component={SevReport}/>
                                 <Route path="/census" component={CensusView}/>
                                 <Route path="/townboard" component={TownBoard}/>
