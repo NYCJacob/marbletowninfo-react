@@ -14,7 +14,6 @@ import Petition from "./components/views/Petition";
 // import ProposedAccAptSup from "./components/views/ProposedAccAptSup";
 import AccAptStatus from "./components/views/AccAptStatus";
 import Contact from "./components/views/Contact";
-import LocalLawTwo from "./components/views/Nov2018LLTwoproposed";
 import SevReport from "./components/views/SevReport"
 
 

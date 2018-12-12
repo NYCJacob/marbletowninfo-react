@@ -72,8 +72,8 @@ function Header(props) {
             </Row>
             <Row mt={1}>
                 <Col>
-                    <Typography fontSize=".8em" pt={3}>
-                        <em>Providing insight into local politics of Marbletown, NY.  Democracy starts in your backyard.</em>
+                    <Typography fontSize="1.0em" pt={3}>
+                        <em>Providing insight into local politics of Marbletown, NY.  <br/>Democracy starts in your backyard.</em>
                     </Typography>
                 </Col>
             </Row>

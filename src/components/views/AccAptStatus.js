@@ -4,7 +4,6 @@ import styled from "styled-components";
 import { Grid, Col, Row, Typography} from '@smooth-ui/core-sc';
 import SubTabNav from "../SubTabNav";
 import {Route} from "react-router-dom";
-import { AccAptSupHtml } from "./NovLL2Markup"
 import Dec2018LL2DraftLaw from "./Dec2018LL2DraftLaw"
 import Nov2018LLTwo from "./Nov2018LLTwoproposed"
 import NovLL2Markup from "./NovLL2Markup"

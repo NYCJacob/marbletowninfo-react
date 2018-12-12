@@ -44,6 +44,7 @@ const Error = ({ name }) => (
 );
 
 const required = value => (value ? undefined : "Required");
+const numeric = value => (!isNaN(value) ? undefined : "Must be a number");
 
 // ****************************************
 //⬇️ THIS IS WHERE ALL THE MAGIC HAPPENS ⬇️   from final form smoothui example code
@@ -70,41 +71,10 @@ const Petition = () => (
             }}>
             <Form
                 onSubmit={sendSubmit}
-                validate={values => {
-                    const errors = {}
-                    if (!values.firstName) {
-                        errors.firstName = 'Required'
-                    }
-                    if (!values.lastName) {
-                        errors.lastName = 'Required'
-                    }
-                    if (!values.streetAddress) {
-                        errors.streetAddress = 'Required'
-                    }
-                    if (!values.city) {
-                        errors.city = 'Required'
-                    }
-
-                    if (!values.zipcode) {
-                        errors.zipcode = 'Required'
-                    } else if (isNaN(values.zipcode)){
-                        errors.zipcode = "Must be a zipcode."
-                    }else if (values.zipcode.length < 6){
-                        errors.zipcode = "Must be a zipcode."
-                    }
-
-                    if (!values.signed) {
-                        errors.lastName = 'Required'
-                    }
-                    if (!values.resident) {
-                        errors.resident = 'Required'
-                    }
-                    return errors
-                }}
 
                 render={({ handleSubmit, form, submitting, pristine, reset }) => (
                     <form onSubmit={ event => {
-                        handleSubmit(event).then(reset);
+                        this.handleSubmit(event).then(reset);
                     } }>
                         <Typography variant="h1" textAlign="center">PETITION</Typography>
                         <Typography variant="h2" textAlign="center">No Commercial Events in Residential Zones</Typography>
@@ -147,7 +117,7 @@ const Petition = () => (
                         <FormGroup>
                             <label>Zipcode</label>
                             <Field name="zipcode" placeholder="Zipcode" type="number"
-                                   component={AdaptedInput} validate={required} control/>
+                                   component={AdaptedInput} validate={required && numeric} control/>
                             <Error name="zipcode"/>
                         </FormGroup>
 
