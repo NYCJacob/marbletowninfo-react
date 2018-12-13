@@ -151,7 +151,7 @@ export const NovLL2Html = () =>
                     <th className="moved" colspan="2">MOVED</th>
                     <th className="deleted" colspan="2">DELETED</th>
                     <th className="commentary" colspan="2">Comments</th>
-                    <th className="" colspan="3" style={{fontSize: "small"}}>* not defined in Zoning 200-4 Establishment and intent of zoning districts.</th>
+                    <th className="" colspan="3" style={{fontSize: "small"}}></th>
                     <th colspan="2"></th>
                 </tr>
                 <tr className="sup-title">
@@ -178,16 +178,16 @@ export const NovLL2Html = () =>
                         <div className="para" >R-3</div>
                     </th>
                     <th align="center" className="entry borderRight borderBottom" startcol="7" valign="bottom">
-                        <div className="para" ><span>SR-E<strong>*</strong></span></div>
+                        <div className="para" ><span>SR-E</span></div>
                     </th>
                     <th align="center" className="entry borderRight borderBottom" startcol="8" valign="bottom">
-                        <div className="para" > <span>SR-N<strong>*</strong></span></div>
+                        <div className="para" > <span>SR-N</span></div>
                     </th>
                     <th align="center" className="entry borderRight borderBottom" startcol="9" valign="bottom">
-                        <div className="para" > <span>B1-E<strong>*</strong></span></div>
+                        <div className="para" > <span>B1-E</span></div>
                     </th>
                     <th align="center" className="entry borderRight borderBottom" startcol="10" valign="bottom">
-                        <div className="para" > <span>B1-N<strong>*</strong></span></div>
+                        <div className="para" > <span>B1-N</span></div>
                     </th>
                     <th align="center" className="entry borderRight borderBottom" startcol="11" valign="bottom">
                         <div className="para" >B-2</div>
@@ -913,43 +913,34 @@ export const NovLL2Html = () =>
                             className="deleted"><b className="bold">Road stand</b> (roadside farm stand)</span></div>
                     </td>
                     <td align="center" className="entry borderRight borderBottom" startcol="4" valign="top">
-                        <div className="para" >P</div>
+                        <div className="para" ><span className="deleted">P</span><span className="new">SU</span></div>
                     </td>
                     <td align="center" className="entry borderRight borderBottom" startcol="5" valign="top">
-                        <div className="para" ><span className="deleted">SU</span><span className="new">P</span>
-                        </div>
+                        <div className="para" >SU</div>
                     </td>
                     <td align="center" className="entry borderRight borderBottom" startcol="6" valign="top">
-                        <div className="para" ><span className="deleted">SU</span><span className="new">P</span>
-                        </div>
+                        <div className="para" >SU</div>
                     </td>
                     <td align="center" className="entry borderRight borderBottom" startcol="7" valign="top">
-                        <div className="para" ><span className="deleted">X</span><span className="new">P</span>
-                        </div>
+                        <div className="para" >X</div>
                     </td>
                     <td align="center" className="entry borderRight borderBottom" startcol="8" valign="top">
-                        <div className="para" ><span className="deleted">X</span><span className="new">P</span>
-                        </div>
+                        <div className="para" >X</div>
                     </td>
                     <td align="center" className="entry borderRight borderBottom" startcol="9" valign="top">
-                        <div className="para" ><span className="deleted">X</span><span className="new">P</span>
-                        </div>
+                        <div className="para" >X</div>
                     </td>
                     <td align="center" className="entry borderRight borderBottom" startcol="10" valign="top">
-                        <div className="para" ><span className="deleted">X</span><span className="new">P</span>
-                        </div>
+                        <div className="para" >X</div>
                     </td>
                     <td align="center" className="entry borderRight borderBottom" startcol="11" valign="top">
-                        <div className="para" ><span className="deleted">SU</span><span className="new">P</span>
-                        </div>
+                        <div className="para" >SU</div>
                     </td>
                     <td align="center" className="entry borderRight borderBottom" startcol="12" valign="top">
-                        <div className="para" ><span className="deleted">X</span><span className="new">P</span>
-                        </div>
+                        <div className="para" >X</div>
                     </td>
                     <td align="center" className="entry borderRight borderBottom" startcol="13" valign="top">
-                        <div className="para" ><span className="deleted">SU</span><span className="new">P</span>
-                        </div>
+                        <div className="para" >SU</div>
                     </td>
                     <td align="left" className="entry borderBottom" startcol="14" valign="top">
                         <div className="para" >§§ <a className="xref" guid="6184053"

@@ -3,7 +3,7 @@ import styled from "styled-components";
 import { NovLL2Html } from "./NovLL2MarkupHtml"
 
 
-export const StyledNovLL2Markup = styled.section`
+const StyledNovLL2Markup = styled.section`
         .sup-title {
             background: white;
             color: black;

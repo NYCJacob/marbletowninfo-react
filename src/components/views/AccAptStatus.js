@@ -7,6 +7,7 @@ import {Route} from "react-router-dom";
 import Dec2018LL2DraftLaw from "./Dec2018LL2DraftLaw"
 import Nov2018LLTwo from "./Nov2018LLTwoproposed"
 import NovLL2Markup from "./NovLL2Markup"
+import Dec4LL2Markup from "./Dec4LL2Markup"
 
 const  StyledAccAptStatus = styled.section`
 `;
@@ -34,6 +35,8 @@ class AccAptStatus extends Component {
                             tabConfig = {[
                                 {"route": "/proposedlaws/accaptsup/",
                                     "tabText": "Dec 4 Draft"},
+                                {"route": "/proposedlaws/accaptsup/2018decMarkup",
+                                    "tabText": "Dec 4 - Current Law Markup"},
                                 {"route": "/proposedlaws/accaptsup/2018november",
                                     "tabText": "Nov 20 Draft"},
                                 {"route": "/proposedlaws/accaptsup/2018november/markup",
@@ -45,12 +48,16 @@ class AccAptStatus extends Component {
                 <Row>
                     <Col>
                         <Route
-                            exact path="/proposedlaws/accaptsup/2018november"
-                            component={Nov2018LLTwo}
-                        />
-                        <Route
                             exact path="/proposedlaws/accaptsup/"
                             component={Dec2018LL2DraftLaw}
+                        />
+                        <Route
+                            exact path="/proposedlaws/accaptsup/2018decMarkup"
+                            component={Dec4LL2Markup}
+                        />
+                        <Route
+                            exact path="/proposedlaws/accaptsup/2018november"
+                            component={Nov2018LLTwo}
                         />
                         <Route
                             exact path="/proposedlaws/accaptsup/2018november/markup"
