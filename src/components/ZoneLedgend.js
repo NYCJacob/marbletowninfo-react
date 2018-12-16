@@ -82,7 +82,7 @@ const StyledR3Button = styled(StyledZoneButton)`
 
 export const ZoneLegend = () => (
     <Grid>
-        <Row justifiedContent={"flex-end"}>
+        <Row>
             <Col xs={12} md={7} style={{textAlign: "center"}}>
                 <Toggler>
                     {({ toggled, onToggle}) => (

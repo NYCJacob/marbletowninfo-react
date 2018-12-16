@@ -144,7 +144,7 @@ class TabNav extends Component {
     render() {
         return (
             <StyledTab>
-                <Tabs forceRenderTabPanel defaultIndex={1}>
+                <Tabs>
                     <TabList>
                         <NavLink exact to="/">
                             <Tab tabFor="one">Zoning</Tab>

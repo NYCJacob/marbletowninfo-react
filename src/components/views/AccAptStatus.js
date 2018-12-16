@@ -1,6 +1,5 @@
 import React from "react";
 import {Component} from "react";
-import styled from "styled-components";
 import { Grid, Col, Row, Typography} from '@smooth-ui/core-sc';
 import SubTabNav from "../SubTabNav";
 import {Route} from "react-router-dom";
@@ -9,9 +8,6 @@ import Nov2018LLTwo from "./Nov2018LLTwoproposed"
 import NovLL2Markup from "./NovLL2Markup"
 import Dec4LL2Markup from "./Dec4LL2Markup"
 
-const  StyledAccAptStatus = styled.section`
-`;
-
 class AccAptStatus extends Component {
     render() {
         return (
@@ -19,16 +15,17 @@ class AccAptStatus extends Component {
                 <Row>
                     <Col xs={12}>
                         <Typography variant="h2">2018 Zoning Law Revisions</Typography>
-                        <Typography variant="p" lineHeight={1.6}>On November 20, 2018 the Marbletown Town Board introduced <strong>Local
+                        <Typography lineHeight={1.6}>On November 20, 2018 the Marbletown Town Board introduced <strong>Local
                             Law 2 titled "A Local Law for 2018 to
                             the Town of Marbletown Zoning Law".</strong> This law proposes sweeping changes to the
                             zoning code including the following: Agriculture,
                             Accessory Apartments, Accessory Uses, Design Guidelines, Timing of Appeals, and Food
-                            Services and Drinking Places.</Typography>
-                        <Typography variant="p" lineHeight={1.6}>On December 4, 2018 the Marbletown Town Board introduced <strong>Local
+                            Services and Drinking Places.</Typography><br/><br/>
+                        <Typography lineHeight={1.6}>On December 4, 2018 the Marbletown Town Board introduced <strong>Local
                             Law 2018 #2 Accessory Apartments ".</strong>
                             This only included the accessory apartmens section from the first Local Law #2.
                         </Typography>
+                        <hr/>
                     </Col>
                     <Col xs={12}>
                         <SubTabNav

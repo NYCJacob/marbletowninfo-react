@@ -7,11 +7,12 @@ import { himitsu } from "../../api/config"
 import { ZoneLegend } from "../ZoneLedgend";
 import MapOverlay from "../MapOverlay";
 import AcreLegend from "../AcreLegend";
+import {mtfarms} from "../../api/mtfarms";
+
 
 mapboxgl.accessToken = himitsu.mapboxAPI;
 
 // styles for map copied from body {https://www.mapbox.com/help/choropleth-studio-gl-pt-2/*/
-
 const StyledMap = styled.div`
 * { box-sizing: border-box; }
 
@@ -117,14 +118,13 @@ const StyledMap = styled.div`
     }
 `;
 
-
 class ZoningMap extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
             parcelDetails: {},
             agDistricts: false
-        }
+        };
         this.map ="";
         this.toggleLayer = this.toggleLayer.bind(this);
     }
@@ -166,6 +166,30 @@ class ZoningMap extends React.Component {
                 }
             });
             this.map.setLayoutProperty('agdistricts', 'visibility', 'none');
+
+            // this.map.addLayer({
+            //     "id": "mtfarms",
+            //     "type": "symbol",
+            //     "source": {
+            //         type: 'vector',
+            //         url: 'mapbox://nyjacob.cjpotckkj04go2ql44sekxx42-8t3g1'
+            //     },
+            //     "source-layer": "mtfarms"
+            // }, 'agdistricts');
+            // this.map.setLayoutProperty('mtfarms', 'visibility', 'visible');
+            this.map.addLayer({
+                "id": 'farmLocations',
+                "type": 'symbol',
+                "source": {
+                    type: 'geojson',
+                    data: mtfarms
+                },
+                layout: {
+                    'icon-image': 'farm-15',
+                    'icon-allow-overlap': true
+                }
+            }, 'agdistricts');
+            this.map.setLayoutProperty('farmLocations', 'visibility', 'visible');
         });
     }
 

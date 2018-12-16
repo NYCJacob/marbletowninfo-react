@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 
 import {Helmet} from "react-helmet";
-import { Grid, Col, Row} from '@smooth-ui/core-sc';
+import { globalStyle, createGlobalStyle, Grid, Col, Row} from '@smooth-ui/core-sc';
 import Header from "./components/Header";
 import TabNav from "./components/TabNav";
 import OverlayHamburger from "./components/OverlayHamburger";
@@ -18,7 +18,7 @@ import SevReport from "./components/views/SevReport"
 
 
 const NoMatch = () => <div><h3>This is not the page you were looking for.</h3></div>
-
+const GlobalStyle = createGlobalStyle`${globalStyle()}`
 
 class App extends Component {
   render() {
