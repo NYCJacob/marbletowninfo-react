@@ -116,6 +116,57 @@ const StyledMap = styled.div`
     .SR {
         background-color: #c48f72
     }
+    
+    // interactive marker styles from mapbox
+    /* Marker tweaks */
+    .mapboxgl-popup-close-button {
+      display: none;
+    }
+    
+    .mapboxgl-popup-content {
+      font: 400 15px/22px 'Source Sans Pro', 'Helvetica Neue', Sans-serif;
+      padding: 0;
+      width: 180px;
+    }
+    
+    .mapboxgl-popup-content-wrapper {
+      padding: 1%;
+    }
+
+    
+    .mapboxgl-popup-content h3 {
+      background: #91c949;
+      color: #fff;
+      margin: 0;
+      display: block;
+      padding: 10px;
+      border-radius: 3px 3px 0 0;
+      font-weight: 700;
+      margin-top: -15px;
+    }
+    
+    .mapboxgl-popup-content h4 {
+      margin: 0;
+      display: block;
+      padding: 10px;
+      font-weight: 400;
+    }
+    
+    .mapboxgl-popup-content div {
+      padding: 10px;
+    }
+    
+    .mapboxgl-container .leaflet-marker-icon {
+      cursor: pointer;
+    }
+    
+    .mapboxgl-popup-anchor-top > .mapboxgl-popup-content {
+      margin-top: 15px;
+    }
+    
+    .mapboxgl-popup-anchor-top > .mapboxgl-popup-tip {
+      border-bottom-color: #91c949;
+    }    
 `;
 
 class ZoningMap extends React.Component {
@@ -123,11 +174,14 @@ class ZoningMap extends React.Component {
         super(props);
         this.state = {
             parcelDetails: {},
-            agDistricts: false
+            agDistricts: false,
+            showFarms: false
         };
         this.map ="";
         this.toggleLayer = this.toggleLayer.bind(this);
+        this.toggleFarms = this.toggleFarms.bind(this);
     }
+
 
     componentDidUpdate() {
         // this.setFill();
@@ -189,9 +243,40 @@ class ZoningMap extends React.Component {
                     'icon-allow-overlap': true
                 }
             }, 'agdistricts');
-            this.map.setLayoutProperty('farmLocations', 'visibility', 'visible');
-        });
-    }
+            this.map.setLayoutProperty('farmLocations', 'visibility', 'none');
+
+
+            // Add an event listener for when a user clicks on the map
+            this.map.on('click', function(e) {
+                // Query all the rendered points in the view
+                var features = this.map.queryRenderedFeatures(e.point, { layers: ['farmLocations'] });
+
+                if (features.length) {
+                    var clickedPoint = features[0];
+                    // 1. Fly to the point
+                    this.flyToStore(clickedPoint);
+                    // 2. Close all other popups and display popup for clicked store
+                    this.createPopUp(clickedPoint);
+                    // // 3. Highlight listing in sidebar (and remove highlight for all other listings)
+                    // var activeItem = document.getElementsByClassName('active');
+                    // if (activeItem[0]) {
+                    //     activeItem[0].classList.remove('active');
+                    // }
+                    // Find the index of the store.features that corresponds to the clickedPoint that fired the event listener
+                    // var selectedFeature = clickedPoint.properties.address;
+                    //
+                    // for (var i = 0; i < mtfarms.features.length; i++) {
+                    //     if ( mtfarms.features[i].properties.address === selectedFeature) {
+                    //         selectedFeatureIndex = i;
+                    //     }
+                    // }
+                    // // Select the correct list item using the found index and add the active class
+                    // var listing = document.getElementById('listing-' + selectedFeatureIndex);
+                    // listing.classList.add('active');
+                }
+            });
+        });  // end this.map.on load
+    }  // end loadmap()
 
     toggleLayer() {
         if (!this.state.agDistricts) {
@@ -208,6 +293,42 @@ class ZoningMap extends React.Component {
         }
     }
 
+    toggleFarms() {
+        if (!this.state.showFarms) {
+            this.setState({
+                showFarms : true
+            });
+            this.map.setLayoutProperty('farmLocations', 'visibility', 'visible');
+
+        } else {
+            this.map.setLayoutProperty('farmLocations', 'visibility', 'none');
+            this.setState({
+                showFarms : false
+            });
+        }
+    }
+
+    // flytostore and createpopup taken from mapbox tutorial:
+    // https://www.mapbox.com/help/building-a-store-locator/
+    flyToStore(currentFeature) {
+        this.map.flyTo({
+            center: currentFeature.geometry.coordinates,
+            zoom: 15
+        });
+    }
+
+    createPopUp(currentFeature) {
+        var popUps = document.getElementsByClassName('mapboxgl-popup');
+        // Check if there is already a popup on the map and if so, remove it
+        if (popUps[0]) popUps[0].remove();
+
+        var popup = new mapboxgl.Popup({ closeOnClick: false })
+            .setLngLat(currentFeature.geometry.coordinates)
+            .setHTML('<h3>Sweetgreen</h3>' +
+                '<h4>' + currentFeature.properties.address + '</h4>')
+            .addTo(this.map);
+    }
+
     componentDidMount() {
             this.loadMap();
     }
@@ -222,7 +343,6 @@ class ZoningMap extends React.Component {
                         </Col>
                     </Row>
 
-
                     <Row>
                         <Col border="1px solid #40617F" p={0}>
                             <div ref={el => this.mapContainer = el} id="mapGL"></div>
@@ -235,7 +355,15 @@ class ZoningMap extends React.Component {
                             <FormCheck color="white" fontWeight="bold">
                                 <Switch id="agDist" labeled onClick={this.toggleLayer} />
                                 <FormCheckLabel htmlFor="agDist">
-                                    Show Agriculture Districts Overlay
+                                    Show Agriculture Districts
+                                </FormCheckLabel>
+                            </FormCheck>
+                        </Col>
+                        <Col background="#40617F">
+                            <FormCheck color="white" fontWeight="bold">
+                                <Switch id="showFarms" labeled onClick={this.toggleFarms} />
+                                <FormCheckLabel htmlFor="showFarms">
+                                    Show Active Farms
                                 </FormCheckLabel>
                             </FormCheck>
                         </Col>
