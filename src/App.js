@@ -16,9 +16,8 @@ import AccAptStatus from "./components/views/AccAptStatus";
 import Contact from "./components/views/Contact";
 import SevReport from "./components/views/SevReport"
 
-
 const NoMatch = () => <div><h3>This is not the page you were looking for.</h3></div>
-const GlobalStyle = createGlobalStyle`${globalStyle()}`
+const GlobalStyle = createGlobalStyle`${globalStyle()}`;
 
 class App extends Component {
   render() {
@@ -42,7 +41,6 @@ class App extends Component {
                                 <title>MarbletownInfo: local politics of Marbletown NY</title>
                             </Helmet>
                             <Switch>
-                                <Route exact path="/" component={ZoningMap}/>
                                 <Route exact path="/sev" component={SevReport}/>
                                 <Route path="/census" component={CensusView}/>
                                 <Route path="/townboard" component={TownBoard}/>
@@ -50,6 +48,7 @@ class App extends Component {
                                 <Route path="/petition" component={Petition}/>
                                 <Route path="/contact" component={Contact}/>
                                 <Route path="/proposedlaws/accaptsup" component={AccAptStatus}/>
+                                <Route exact path="/" component={ZoningMap}/>
                                 <Route component={NoMatch}/>
                             </Switch>
                     </Grid>
