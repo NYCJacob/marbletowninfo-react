@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import styled, {css} from "styled-components";
-import { down } from '@smooth-ui/core-sc'
-import { NavLink } from 'react-router-dom';
+import { Route, NavLink } from 'react-router-dom';
 import { Tabs, Tab, TabList } from 'react-web-tabs';
 import 'react-web-tabs/dist/react-web-tabs.css';
 
@@ -24,7 +23,6 @@ li:hover {
   display: flex;
   flex-shrink: 0;
   flex-grow: 0;
-  border-right: 1px solid #ddd;
   margin-right: 1rem;
 }
 .navigation li * {
@@ -51,17 +49,22 @@ li:hover {
   cursor: pointer;
 }
 
-.navigation li a.active {
+.navigation li a.active, 
+.navigation li span.active {
   position: relative;
   font-weight: bold;
 }
 
-.navigation li a.active:after {
+
+
+.navigation li a.active:after,
+.navigation li span.active:after {
   content: '';
   position: absolute;
 }
 
-.navigation li a.active:after {
+.navigation li a.active:after, 
+.navigation li span.active:after {
   bottom: -1px;
   left: 0;
   width: 100%;
@@ -74,6 +77,7 @@ ul li ul.subDropDown {
   position: absolute;
   transition: all 0.5s ease;
   display: none;
+  z-index: 20;
 }
 
 ul li:hover > ul.subDropDown,
@@ -98,57 +102,76 @@ ul li ul.subDropDown li {
   margin-left: -50px;
 }
 
-
-
 `;
+
 
 class TabNav extends Component {
 
+    constructor(props) {
+        super(props);
+        this.state = {
+            path: window.location.pathname
+        }
+    }
+
+
+    componentDidUpdate() {
+        // console.log(window.location);
+        // so state only updates if different
+        if ( this.state.path !== window.location.pathname ){
+            this.setState({
+                path: window.location.pathname
+            })
+
+        }
+    }
+
     render() {
         return (
-            <ul className="navigation">
-                <li>
-                    <NavLink exact to="/">
-                        Zoning
-                    </NavLink>
-                </li>
-                <li>
-                    <NavLink exact to="/census">
-                        Census
-                    </NavLink>
-                </li>
-                <li>
-                    <NavLink exact to="/townboard">
-                        Town Board
-                    </NavLink>
-                </li>
-                <li classname="proposed-laws">
-                    <span>Proposed Laws</span>
-                    <ul className="dropDown">
-                        <li>
-                            <NavLink to="/proposedlaws/events">
-                                Event Law
-                            </NavLink>
-                        </li>
-                        <li>
-                            <NavLink to="/proposedlaws/accaptsup">
-                                Acc Apt/SUP Rev
-                            </NavLink>
-                        </li>
-                    </ul>
-                </li>
-                <li>
-                    <NavLink exact to="/petition">
-                        Petition
-                    </NavLink>
-                </li>
-                <li>
-                    <NavLink exact to="/contact">
-                        Contact/About
-                    </NavLink>
-                </li>
-            </ul>
-
+            <StyledTab>
+                <ul className="navigation">
+                    <li>
+                        <NavLink exact to="/">
+                            Zoning
+                        </NavLink>
+                    </li>
+                    <li>
+                        <NavLink exact to="/census">
+                            Census
+                        </NavLink>
+                    </li>
+                    <li>
+                        <NavLink exact to="/townboard">
+                            Town Board
+                        </NavLink>
+                    </li>
+                    <li className="proposed-laws">
+                        <span className={`${this.state.path.indexOf("proposedlaws") > -1 ? "active" : "" } `}>Proposed Laws</span>
+                        <ul className="subDropDown">
+                            <li>
+                                <NavLink to="/proposedlaws/events">
+                                    Event Law
+                                </NavLink>
+                            </li>
+                            <li>
+                                <NavLink to="/proposedlaws/accaptsup">
+                                    Acc Apt/SUP Rev
+                                </NavLink>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <NavLink exact to="/petition">
+                            Petition
+                        </NavLink>
+                    </li>
+                    <li>
+                        <NavLink exact to="/contact">
+                            Contact/About
+                        </NavLink>
+                    </li>
+                </ul>
+            </StyledTab>
         );
     }
 }
