@@ -8,6 +8,7 @@ import { ZoneLegend } from "../ZoneLedgend";
 import MapOverlay from "../MapOverlay";
 import AcreLegend from "../AcreLegend";
 import {mtfarms} from "../../api/mtfarms";
+import {farmIcon} from "../../api/farm-15-green";
 
 
 mapboxgl.accessToken = himitsu.mapboxAPI;
@@ -175,13 +176,13 @@ class ZoningMap extends React.Component {
         this.state = {
             parcelDetails: {},
             agDistricts: false,
-            showFarms: false
+            farmMarkers: false
         };
         this.map ="";
         this.toggleLayer = this.toggleLayer.bind(this);
-        this.toggleFarms = this.toggleFarms.bind(this);
+        this.toggleFarmMarkers = this.toggleFarmMarkers.bind(this);
+        this.farmMarkers = [];
     }
-
 
     componentDidUpdate() {
         // this.setFill();
@@ -221,16 +222,6 @@ class ZoningMap extends React.Component {
             });
             this.map.setLayoutProperty('agdistricts', 'visibility', 'none');
 
-            // this.map.addLayer({
-            //     "id": "mtfarms",
-            //     "type": "symbol",
-            //     "source": {
-            //         type: 'vector',
-            //         url: 'mapbox://nyjacob.cjpotckkj04go2ql44sekxx42-8t3g1'
-            //     },
-            //     "source-layer": "mtfarms"
-            // }, 'agdistricts');
-            // this.map.setLayoutProperty('mtfarms', 'visibility', 'visible');
             this.map.addLayer({
                 "id": 'farmLocations',
                 "type": 'symbol',
@@ -276,6 +267,7 @@ class ZoningMap extends React.Component {
                 }
             });
         });  // end this.map.on load
+        this.loadFarmMarkers();
     }  // end loadmap()
 
     toggleLayer() {
@@ -293,18 +285,35 @@ class ZoningMap extends React.Component {
         }
     }
 
-    toggleFarms() {
-        if (!this.state.showFarms) {
-            this.setState({
-                showFarms : true
-            });
-            this.map.setLayoutProperty('farmLocations', 'visibility', 'visible');
+    loadFarmMarkers() {
+        mtfarms.features.forEach(function (marker, index) {
+            // Create the custom markers, set their position, and add to map
+            // new mapboxgl.Marker(this.markerContainer, { offset: [0, -23] })
+            let markerContainer = document.createElement('div');
+            markerContainer.className="marker";
+            markerContainer.innerHTML += farmIcon;
 
-        } else {
-            this.map.setLayoutProperty('farmLocations', 'visibility', 'none');
-            this.setState({
-                showFarms : false
-            });
+            this.farmMarkers[index] = new mapboxgl.Marker(markerContainer, { offset: [0, -23] })
+                .setLngLat(marker.geometry.coordinates);
+        }.bind(this));
+    }
+
+
+    toggleFarmMarkers() {
+        if ( !this.state.farmMarkers ){
+            this.farmMarkers.forEach(function (marker, index){
+                marker.addTo(this.map);
+            }.bind(this) );
+            this.setState( {
+                farmMarkers: true
+            })
+        }else {
+            this.farmMarkers.forEach(function (marker, index){
+                marker.remove(this.map);
+            }.bind(this) );
+            this.setState( {
+                farmMarkers: false
+            })
         }
     }
 
@@ -361,7 +370,7 @@ class ZoningMap extends React.Component {
                         </Col>
                         <Col background="#40617F">
                             <FormCheck color="white" fontWeight="bold">
-                                <Switch id="showFarms" labeled onClick={this.toggleFarms} />
+                                <Switch id="showFarms" labeled onClick={ this.toggleFarmMarkers() } />
                                 <FormCheckLabel htmlFor="showFarms">
                                     Show Active Farms
                                 </FormCheckLabel>

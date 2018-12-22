@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
-import styled, {css} from "styled-components";
-import { Route, NavLink } from 'react-router-dom';
-import { Tabs, Tab, TabList } from 'react-web-tabs';
+import styled from "styled-components";
+import { NavLink } from 'react-router-dom';
 import 'react-web-tabs/dist/react-web-tabs.css';
 
 
