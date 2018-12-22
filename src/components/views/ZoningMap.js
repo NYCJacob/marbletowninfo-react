@@ -167,7 +167,18 @@ const StyledMap = styled.div`
     
     .mapboxgl-popup-anchor-top > .mapboxgl-popup-tip {
       border-bottom-color: #91c949;
-    }    
+    }  
+    
+    .marker {
+      border: none;
+      cursor: pointer;
+      height: px;
+      width: 56px;
+      background-image: url(../../api/farm-15-green.js);
+      background-color: rgba(0, 0, 0, 0);
+      z-index: 99;
+    }
+
 `;
 
 class ZoningMap extends React.Component {
@@ -179,23 +190,13 @@ class ZoningMap extends React.Component {
             farmMarkers: false
         };
         this.map ="";
+        this.markerContainer = null;
         this.toggleLayer = this.toggleLayer.bind(this);
         this.toggleFarmMarkers = this.toggleFarmMarkers.bind(this);
         this.farmMarkers = [];
     }
 
-    componentDidUpdate() {
-        // this.setFill();
-    }
-
     loadMap() {
-        this.map = new mapboxgl.Map({
-            container: this.mapContainer,
-            style: 'mapbox://styles/nyjacob/cjkls0vmj0mz52rqey0snp39t',
-            center: [-74.109661, 41.881201],
-            zoom: 11.0
-        });
-
         this.map.addControl(new mapboxgl.NavigationControl());
         this.map.getCanvas().style.cursor = 'crosshair';
         this.map.on('mousemove', (e) => {
@@ -222,50 +223,6 @@ class ZoningMap extends React.Component {
             });
             this.map.setLayoutProperty('agdistricts', 'visibility', 'none');
 
-            this.map.addLayer({
-                "id": 'farmLocations',
-                "type": 'symbol',
-                "source": {
-                    type: 'geojson',
-                    data: mtfarms
-                },
-                layout: {
-                    'icon-image': 'farm-15',
-                    'icon-allow-overlap': true
-                }
-            }, 'agdistricts');
-            this.map.setLayoutProperty('farmLocations', 'visibility', 'none');
-
-
-            // Add an event listener for when a user clicks on the map
-            this.map.on('click', function(e) {
-                // Query all the rendered points in the view
-                var features = this.map.queryRenderedFeatures(e.point, { layers: ['farmLocations'] });
-
-                if (features.length) {
-                    var clickedPoint = features[0];
-                    // 1. Fly to the point
-                    this.flyToStore(clickedPoint);
-                    // 2. Close all other popups and display popup for clicked store
-                    this.createPopUp(clickedPoint);
-                    // // 3. Highlight listing in sidebar (and remove highlight for all other listings)
-                    // var activeItem = document.getElementsByClassName('active');
-                    // if (activeItem[0]) {
-                    //     activeItem[0].classList.remove('active');
-                    // }
-                    // Find the index of the store.features that corresponds to the clickedPoint that fired the event listener
-                    // var selectedFeature = clickedPoint.properties.address;
-                    //
-                    // for (var i = 0; i < mtfarms.features.length; i++) {
-                    //     if ( mtfarms.features[i].properties.address === selectedFeature) {
-                    //         selectedFeatureIndex = i;
-                    //     }
-                    // }
-                    // // Select the correct list item using the found index and add the active class
-                    // var listing = document.getElementById('listing-' + selectedFeatureIndex);
-                    // listing.classList.add('active');
-                }
-            });
         });  // end this.map.on load
         this.loadFarmMarkers();
     }  // end loadmap()
@@ -297,7 +254,6 @@ class ZoningMap extends React.Component {
                 .setLngLat(marker.geometry.coordinates);
         }.bind(this));
     }
-
 
     toggleFarmMarkers() {
         if ( !this.state.farmMarkers ){
@@ -339,7 +295,14 @@ class ZoningMap extends React.Component {
     }
 
     componentDidMount() {
-            this.loadMap();
+        this.map = new mapboxgl.Map({
+            container: this.mapContainer,
+            style: 'mapbox://styles/nyjacob/cjkls0vmj0mz52rqey0snp39t',
+            // center: [-74.109661, 41.881201],
+            center: [-74.1650304, 41.8660716],
+            zoom: 11.0
+        });
+        this.loadMap();
     }
 
     render(){
@@ -348,7 +311,7 @@ class ZoningMap extends React.Component {
                 <Grid>
                     <Row >
                         <Col>
-                        <ZoneLegend/>
+                            <ZoneLegend/>
                         </Col>
                     </Row>
 
@@ -370,7 +333,7 @@ class ZoningMap extends React.Component {
                         </Col>
                         <Col background="#40617F">
                             <FormCheck color="white" fontWeight="bold">
-                                <Switch id="showFarms" labeled onClick={ this.toggleFarmMarkers() } />
+                                <Switch id="showFarms" labeled onClick={this.toggleFarmMarkers} />
                                 <FormCheckLabel htmlFor="showFarms">
                                     Show Active Farms
                                 </FormCheckLabel>
