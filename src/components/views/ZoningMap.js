@@ -128,6 +128,7 @@ const StyledMap = styled.div`
       font: 400 15px/22px 'Source Sans Pro', 'Helvetica Neue', Sans-serif;
       padding: 0;
       width: 180px;
+      z-index: 1;
     }
     
     .mapboxgl-popup-content-wrapper {
@@ -168,15 +169,14 @@ const StyledMap = styled.div`
     .mapboxgl-popup-anchor-top > .mapboxgl-popup-tip {
       border-bottom-color: #91c949;
     }  
-    
     .marker {
       border: none;
       cursor: pointer;
-      height: px;
+      height: 56px;
       width: 56px;
       background-image: url(../../api/farm-15-green.js);
       background-color: rgba(0, 0, 0, 0);
-      z-index: 99;
+      z-index: 19;
     }
 
 `;
@@ -249,6 +249,11 @@ class ZoningMap extends React.Component {
             let markerContainer = document.createElement('div');
             markerContainer.className="marker";
             markerContainer.innerHTML += farmIcon;
+            markerContainer.addEventListener('click', function (e) {
+                this.flyToLocation(marker);
+                this.createPopUp(marker);
+                e.stopPropagation();
+            }.bind(this));
 
             this.farmMarkers[index] = new mapboxgl.Marker(markerContainer, { offset: [0, -23] })
                 .setLngLat(marker.geometry.coordinates);
@@ -275,7 +280,7 @@ class ZoningMap extends React.Component {
 
     // flytostore and createpopup taken from mapbox tutorial:
     // https://www.mapbox.com/help/building-a-store-locator/
-    flyToStore(currentFeature) {
+    flyToLocation(currentFeature) {
         this.map.flyTo({
             center: currentFeature.geometry.coordinates,
             zoom: 15
@@ -289,8 +294,8 @@ class ZoningMap extends React.Component {
 
         var popup = new mapboxgl.Popup({ closeOnClick: false })
             .setLngLat(currentFeature.geometry.coordinates)
-            .setHTML('<h3>Sweetgreen</h3>' +
-                '<h4>' + currentFeature.properties.address + '</h4>')
+            .setHTML('<h3>' + currentFeature.properties.name + '</h3>' +
+                '<h4>' + 'details coming soon' + '</h4>')
             .addTo(this.map);
     }
 
