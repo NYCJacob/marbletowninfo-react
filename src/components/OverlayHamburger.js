@@ -15,10 +15,10 @@ ${down('sm', css`
 `) }
 
 #toggle {
-  //display: block;
-  max-width: 10vw;
+  display: block;
+  width: 28px;
   height: 30px;
-  margin: 4em auto 2em;
+  margin: 2em auto 10px;
 }
 
 #toggle span:after,
@@ -39,7 +39,8 @@ ${down('sm', css`
 #toggle span,
 #toggle span:after,
 #toggle span:before {
-  height: 10px;
+  width: 100%;
+  height: 5px;
   background-color: #888;
   transition: all 0.3s;
   backface-visibility: hidden;
@@ -61,7 +62,7 @@ ${down('sm', css`
 }
 .overlay {
     height: 100%;
-    
+    width: 0;
     position: fixed; 
     z-index: 1; 
     left: 0;
@@ -118,7 +119,6 @@ ${down('sm', css`
         right: 35px;
     }
 } 
-
 `;
 
 class OverlayHamburger extends Component {
