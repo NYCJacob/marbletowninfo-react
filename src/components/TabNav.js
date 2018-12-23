@@ -33,6 +33,7 @@ li:hover {
   flex-shrink: 0;
   flex-grow: 0;
   margin-right: 1rem;
+  margin-top: 0.5rem;
 }
 .navigation li * {
   outline: none !important;

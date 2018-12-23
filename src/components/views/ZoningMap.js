@@ -339,8 +339,8 @@ class ZoningMap extends React.Component {
                     <AcreLegend/>
                     <MapOverlay details={ this.state.parcelDetails } />
 
-                    <Row>
-                        <Col background="#40617F">
+                    <Row style={ {fontSize: ".75em"}}>
+                        <Col background="#40617F" style={ {paddingTop: '2em'} }>
                             <FormCheck color="white" fontWeight="bold">
                                 <Switch id="agDist" labeled onClick={this.toggleLayer} />
                                 <FormCheckLabel htmlFor="agDist">
@@ -348,8 +348,8 @@ class ZoningMap extends React.Component {
                                 </FormCheckLabel>
                             </FormCheck>
                         </Col>
-                        <Col background="#40617F">
-                            <FormCheck color="white" fontWeight="bold">
+                        <Col background="#40617F" style={ {paddingTop: '2em'} }>
+                            <FormCheck color="white" fontWeight="bold" >
                                 <Switch id="showFarms" labeled onClick={this.toggleFarmMarkers} />
                                 <FormCheckLabel htmlFor="showFarms">
                                     Show Farms
@@ -357,7 +357,7 @@ class ZoningMap extends React.Component {
                             </FormCheck>
                         </Col>
                         <Col background="#40617F">
-                            <Button onClick={this.resetZoom} >
+                            <Button onClick={this.resetZoom} style={ {margin: '1em', padding: '0.5em'} }>
                                 Reset Zoom/Center
                             </Button>
                         </Col>

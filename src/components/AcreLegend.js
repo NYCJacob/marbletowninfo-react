@@ -5,7 +5,7 @@ import styled from "styled-components";
 const StyledAcreLegend = styled.div`
     float: left;
     position: absolute;
-    top: 35vh;
+    top: 27vh;
     //margin-left: .1vw;
     background: rgba(255, 255, 255, 0.9);
     font-family: Arial, sans-serif;
@@ -34,11 +34,11 @@ const StyledAcreLegend = styled.div`
     }
     
     @media (max-width: 991px) and (min-width: 768px){   //md - lg
-      top: 27vh;
+      top: 26vh;
       font-size: x-small;
     }
     @media (max-width: 767px) {
-      top: 35vh;
+      top: 25vh;
       font-size: x-small;
     }
 `;

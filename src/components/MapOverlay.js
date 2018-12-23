@@ -3,7 +3,7 @@ import styled from "styled-components";
 
 const StyledMapOverlay = styled.div`
     position: absolute;
-    top: 25vh;
+    top: 15vh;
     left: 10vw;
     min-height: 10vh;
     background: rgba(255, 255, 255, 0.8);
@@ -19,19 +19,29 @@ const StyledMapOverlay = styled.div`
     #details {
       font-size: large;
     }
+  
     
     @media (max-width: 991px) and (min-width: 768px){   //md - lg
-      top: 30vh;
-      font-size: x-small;
+      top: 15vh;
+      font-size: small;
+      p {
+        font-size: small;
+      }
     }
     @media (max-width: 767px) and (min-width: 551px) {
-      top: 25vh;
-      left: 15vw;
+      top: 15vh;
+      left: 7vw;
       font-size: x-small;
+      p {
+        font-size: x-small;
+      }
     }
     @media (max-width: 550px) {
-      top: 26vh;
+      top: 13vh;
       font-size: x-small;
+      p {
+        font-size: x-small;
+      }
     }
     
 `;

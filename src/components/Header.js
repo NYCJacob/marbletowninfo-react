@@ -63,7 +63,7 @@ const Logo2 = styled.span`
 function Header(props) {
     return (
         <Grid>
-            <Row>
+            <Row >
                 <Col>
                     <HeaderContainer>
                         <Logo1>Marbletown</Logo1>
@@ -74,8 +74,8 @@ function Header(props) {
             </Row>
             <Row mt={1}>
                 <Col>
-                    <Typography fontSize={{xs: "0.8em",md: "1.0em"}} pt={3}>
-                        <em>Providing insight into local politics of Marbletown, NY.</em>  <br/><em>Democracy starts in your backyard.</em>
+                    <Typography fontSize={{xs: "0.8em",md: "1.0em"}} pt={0} mt={0}>
+                        <em>Providing insight into local politics of Marbletown, NY.</em>
                     </Typography>
                 </Col>
             </Row>
