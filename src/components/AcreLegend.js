@@ -5,14 +5,14 @@ import styled from "styled-components";
 const StyledAcreLegend = styled.div`
     float: left;
     position: absolute;
-    top: 31vh;
-    margin-left: .1vw;
+    top: 35vh;
+    //margin-left: .1vw;
     background: rgba(255, 255, 255, 0.9);
     font-family: Arial, sans-serif;
     overflow: auto;
     border-radius: 3px;
     padding: .2rem;
-    margin-left: .5em;
+    margin-left: .3em;
     box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
     line-height: 1rem;
     width: 10vw;
@@ -34,11 +34,11 @@ const StyledAcreLegend = styled.div`
     }
     
     @media (max-width: 991px) and (min-width: 768px){   //md - lg
-      top: 15vh;
+      top: 27vh;
       font-size: x-small;
     }
     @media (max-width: 767px) {
-      top: 18vh;
+      top: 35vh;
       font-size: x-small;
     }
 `;

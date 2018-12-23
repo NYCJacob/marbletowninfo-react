@@ -30,6 +30,7 @@ const Logo1 = styled.span`
     `)}
     ${down('sm', css`
       font-size: 0.4em;
+      border-bottom: .3rem solid;
     `)}
 `;
 
@@ -54,6 +55,7 @@ const Logo2 = styled.span`
     `)}
     ${down('sm', css`
       font-size: 0.4em;
+      border-bottom: .3rem solid black;
     `)}
 `;
 
@@ -72,8 +74,8 @@ function Header(props) {
             </Row>
             <Row mt={1}>
                 <Col>
-                    <Typography fontSize="1.0em" pt={3}>
-                        <em>Providing insight into local politics of Marbletown, NY.  <br/>Democracy starts in your backyard.</em>
+                    <Typography fontSize={{xs: "0.8em",md: "1.0em"}} pt={3}>
+                        <em>Providing insight into local politics of Marbletown, NY.</em>  <br/><em>Democracy starts in your backyard.</em>
                     </Typography>
                 </Col>
             </Row>

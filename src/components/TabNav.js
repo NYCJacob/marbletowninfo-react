@@ -1,10 +1,20 @@
 import React, { Component } from 'react';
-import styled from "styled-components";
+import { styled, css, up, down } from '@smooth-ui/core-sc'
+
 import { NavLink } from 'react-router-dom';
 import 'react-web-tabs/dist/react-web-tabs.css';
 
 
 const StyledTab = styled.div`
+${down('sm', css`
+  display: none;
+`) }
+
+${up('sm', css`
+  padding-right: 10vw;
+  font-size: small;
+`) }
+
 ul {
   display: inline;
   padding: 0;

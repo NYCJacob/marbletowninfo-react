@@ -3,8 +3,8 @@ import styled from "styled-components";
 
 const StyledMapOverlay = styled.div`
     position: absolute;
-    top: 29vh;
-    left: 55vw;
+    top: 25vh;
+    left: 10vw;
     min-height: 10vh;
     background: rgba(255, 255, 255, 0.8);
     font-family: Arial, sans-serif;
@@ -21,11 +21,16 @@ const StyledMapOverlay = styled.div`
     }
     
     @media (max-width: 991px) and (min-width: 768px){   //md - lg
-      top: 15vh;
+      top: 30vh;
       font-size: x-small;
     }
-    @media (max-width: 767px) {
-      top: 18vh;
+    @media (max-width: 767px) and (min-width: 551px) {
+      top: 25vh;
+      left: 15vw;
+      font-size: x-small;
+    }
+    @media (max-width: 550px) {
+      top: 26vh;
       font-size: x-small;
     }
     

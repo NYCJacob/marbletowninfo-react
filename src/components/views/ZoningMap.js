@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from "styled-components";
-import { Grid, Col, Row, Switch, FormCheck, FormCheckLabel} from '@smooth-ui/core-sc';
+import { Grid, Col, Row, Button, Switch, FormCheck, FormCheckLabel} from '@smooth-ui/core-sc';
 import mapboxgl from 'mapbox-gl';
 import "../../styles/mapbox-gl.css";
 import { himitsu } from "../../api/config"
@@ -63,10 +63,9 @@ const StyledMap = styled.div`
     }
     
     #acres-legend {
-        top: 0;
         padding: .2rem;
         box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
-        line-height: 16px;
+        line-height: 1em;
         width: 10vw;
     }
     
@@ -119,9 +118,13 @@ const StyledMap = styled.div`
     }
     
     // interactive marker styles from mapbox
-    /* Marker tweaks */
+    
+    .mapboxgl-popup {
+      padding-bottom: 50px;
+    }
+    
     .mapboxgl-popup-close-button {
-      display: none;
+      //display: none;
     }
     
     .mapboxgl-popup-content {
@@ -193,6 +196,7 @@ class ZoningMap extends React.Component {
         this.markerContainer = null;
         this.toggleLayer = this.toggleLayer.bind(this);
         this.toggleFarmMarkers = this.toggleFarmMarkers.bind(this);
+        this.resetZoom = this.resetZoom.bind(this);
         this.farmMarkers = [];
     }
 
@@ -299,6 +303,13 @@ class ZoningMap extends React.Component {
             .addTo(this.map);
     }
 
+    resetZoom() {
+        this.map.flyTo({
+                center: [-74.1650304, 41.8660716],
+                zoom: 11.0
+            });
+    }
+
     componentDidMount() {
         this.map = new mapboxgl.Map({
             container: this.mapContainer,
@@ -325,14 +336,15 @@ class ZoningMap extends React.Component {
                             <div ref={el => this.mapContainer = el} id="mapGL"></div>
                         </Col>
                     </Row>
-                    <MapOverlay details={ this.state.parcelDetails } />
                     <AcreLegend/>
+                    <MapOverlay details={ this.state.parcelDetails } />
+
                     <Row>
                         <Col background="#40617F">
                             <FormCheck color="white" fontWeight="bold">
                                 <Switch id="agDist" labeled onClick={this.toggleLayer} />
                                 <FormCheckLabel htmlFor="agDist">
-                                    Show Agriculture Districts
+                                    Show NYS Agriculture Districts
                                 </FormCheckLabel>
                             </FormCheck>
                         </Col>
@@ -340,9 +352,14 @@ class ZoningMap extends React.Component {
                             <FormCheck color="white" fontWeight="bold">
                                 <Switch id="showFarms" labeled onClick={this.toggleFarmMarkers} />
                                 <FormCheckLabel htmlFor="showFarms">
-                                    Show Active Farms
+                                    Show Farms
                                 </FormCheckLabel>
                             </FormCheck>
+                        </Col>
+                        <Col background="#40617F">
+                            <Button onClick={this.resetZoom} >
+                                Reset Zoom/Center
+                            </Button>
                         </Col>
                     </Row>
                     <Row>

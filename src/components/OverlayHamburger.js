@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 // import styled from "styled-components";
 import {NavLink} from "react-router-dom";
-import { styled, css, up } from '@smooth-ui/core-sc'
+import { styled, css, up, down } from '@smooth-ui/core-sc'
 
 // hamburger style based on https://codepen.io/CreativeJuiz/pen/oCBxz
 
@@ -10,11 +10,15 @@ ${up('sm', css`
   display: none;
 `)}
 
+${down('sm', css`
+  width: 50px;
+`) }
+
 #toggle {
-  display: block;
-  width: 28px;
+  //display: block;
+  max-width: 10vw;
   height: 30px;
-  margin: 2em auto 10px;
+  margin: 4em auto 2em;
 }
 
 #toggle span:after,
@@ -35,8 +39,7 @@ ${up('sm', css`
 #toggle span,
 #toggle span:after,
 #toggle span:before {
-  width: 100%;
-  height: 5px;
+  height: 10px;
   background-color: #888;
   transition: all 0.3s;
   backface-visibility: hidden;
@@ -58,7 +61,7 @@ ${up('sm', css`
 }
 .overlay {
     height: 100%;
-    width: 0;
+    
     position: fixed; 
     z-index: 1; 
     left: 0;

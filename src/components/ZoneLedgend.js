@@ -81,9 +81,9 @@ const StyledR3Button = styled(StyledZoneButton)`
 
 
 export const ZoneLegend = () => (
-    <Grid>
-        <Row>
-            <Col xs={12} md={7} style={{textAlign: "center"}}>
+        <Row ml={0} p={0}>
+            <Col xs={12} md={7} sm={6} p={0} m={0} style={{textAlign: "center"}} fontSize={ {xs: "0.75em"} }>
+                <div>
                 <Toggler>
                     {({ toggled, onToggle}) => (
                         <StyledDivButton className="modal-wrapper">
@@ -156,6 +156,7 @@ export const ZoneLegend = () => (
                     }
 
                 </Toggler>
+
                 <StyledA2Button>A-2</StyledA2Button>
                 <StyledA3Button>A-3</StyledA3Button>
                 <StyledA4Button>A-4</StyledA4Button>
@@ -165,8 +166,9 @@ export const ZoneLegend = () => (
                 <StyledI1Button>I-1</StyledI1Button>
                 <StyledR1Button>R-1</StyledR1Button>
                 <StyledR3Button>R-3</StyledR3Button>
+                </div>
             </Col>
-            <Col xs={12} md={5} style={{textAlign: "center", paddingRight: "3vw"}}>
+            <Col xs={12} md={5} sm={6} style={{textAlign: "center", paddingRight: "3vw"}} fontSize={ {xs: "0.75em"} } >
                 <StyledZoneButton >
                     <span style={{color: "red"}}>
                           <i className="fal fa-exclamation-circle"></i>
@@ -176,7 +178,5 @@ export const ZoneLegend = () => (
                 </StyledZoneButton>
             </Col>
         </Row>
-
-    </Grid>
 );
 

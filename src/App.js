@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 
 import {Helmet} from "react-helmet";
-import { globalStyle, createGlobalStyle, Grid, Col, Row} from '@smooth-ui/core-sc';
+import { globalStyle, createGlobalStyle, styled, up, css, Grid, Col, Row} from '@smooth-ui/core-sc';
 import Header from "./components/Header";
 import TabNav from "./components/TabNav";
 import OverlayHamburger from "./components/OverlayHamburger";
@@ -11,7 +11,6 @@ import TownBoard from "./components/views/TownBoard";
 import CensusView from "./components/views/CensusView";
 import EventLaw from "./components/views/EventLaw";
 import Petition from "./components/views/Petition";
-// import ProposedAccAptSup from "./components/views/ProposedAccAptSup";
 import AccAptStatus from "./components/views/AccAptStatus";
 import Contact from "./components/views/Contact";
 import SevReport from "./components/views/SevReport"
@@ -19,18 +18,24 @@ import SevReport from "./components/views/SevReport"
 const NoMatch = () => <div><h3>This is not the page you were looking for.</h3></div>
 const GlobalStyle = createGlobalStyle`${globalStyle()}`;
 
+const styledHamburgerCol = styled(Col)`
+  ${up('sm', css`
+  display: none;
+`)}
+`;
+
 class App extends Component {
   render() {
     return (
         <BrowserRouter>
                     <Grid>
-                        <Row>
-                            <Col xs={6} sm={8} md={10}>
+                        <Row ml={0}>
+                            <Col xs={8} sm={12} md={12}>
                                 <Header/>
                             </Col>
-                            <Col xs={6} sm={4} md={2}>
+                            <styledHamburgerCol xs={2} mt={4} >
                                 <OverlayHamburger/>
-                            </Col>
+                            </styledHamburgerCol>
                         </Row>
                         <Row>
                             <Col xs="auto">
