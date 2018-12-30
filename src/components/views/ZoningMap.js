@@ -7,8 +7,10 @@ import { himitsu } from "../../api/config"
 import { ZoneLegend } from "../ZoneLedgend";
 import MapOverlay from "../MapOverlay";
 import AcreLegend from "../AcreLegend";
-import {mtfarms} from "../../api/mtfarms";
-import {farmIcon} from "../../api/farm-15-green";
+import { mtfarms } from "../../api/mtfarms";
+import { mtAgas } from "../../api/mtAgas";
+import { farmIcon } from "../../api/farm-15-green";
+import { bankIcon } from "../../api/bank-15-green";
 
 
 mapboxgl.accessToken = himitsu.mapboxAPI;
@@ -190,14 +192,17 @@ class ZoningMap extends React.Component {
         this.state = {
             parcelDetails: {},
             agDistricts: false,
-            farmMarkers: false
+            farmMarkers: false,
+            agasMarkers: false
         };
         this.map ="";
         this.markerContainer = null;
         this.toggleLayer = this.toggleLayer.bind(this);
         this.toggleFarmMarkers = this.toggleFarmMarkers.bind(this);
+        this.toggleAgAs = this.toggleAgAs.bind(this);
         this.resetZoom = this.resetZoom.bind(this);
         this.farmMarkers = [];
+        this.agasMarkers = [];
     }
 
     loadMap() {
@@ -229,6 +234,7 @@ class ZoningMap extends React.Component {
 
         });  // end this.map.on load
         this.loadFarmMarkers();
+        this.loadAgAsMarkers();
     }  // end loadmap()
 
     toggleLayer() {
@@ -264,6 +270,22 @@ class ZoningMap extends React.Component {
         }.bind(this));
     }
 
+    loadAgAsMarkers() {
+        mtAgas.features.forEach(function (marker, index) {
+            let markerContainer = document.createElement('div');
+            markerContainer.className="marker";
+            markerContainer.innerHTML += bankIcon;
+            markerContainer.addEventListener('click', function (e) {
+                this.flyToLocation(marker);
+                this.createPopUp(marker);
+                e.stopPropagation();
+            }.bind(this));
+
+            this.agasMarkers[index] = new mapboxgl.Marker(markerContainer, { offset: [0, -23] })
+                .setLngLat(marker.geometry.coordinates);
+        }.bind(this));
+    }
+
     toggleFarmMarkers() {
         if ( !this.state.farmMarkers ){
             this.farmMarkers.forEach(function (marker, index){
@@ -278,6 +300,24 @@ class ZoningMap extends React.Component {
             }.bind(this) );
             this.setState( {
                 farmMarkers: false
+            })
+        }
+    }
+
+    toggleAgAs() {
+        if ( !this.state.agasMarkers ){
+            this.agasMarkers.forEach(function (marker, index){
+                marker.addTo(this.map);
+            }.bind(this) );
+            this.setState( {
+                agasMarkers: true
+            })
+        }else {
+            this.agasMarkers.forEach(function (marker, index){
+                marker.remove(this.map);
+            }.bind(this) );
+            this.setState( {
+                agasMarkers: false
             })
         }
     }
@@ -353,6 +393,14 @@ class ZoningMap extends React.Component {
                                 <Switch id="showFarms" labeled onClick={this.toggleFarmMarkers} />
                                 <FormCheckLabel htmlFor="showFarms">
                                     Show Farms
+                                </FormCheckLabel>
+                            </FormCheck>
+                        </Col>
+                        <Col background="#40617F" style={ {paddingTop: '2em'} }>
+                            <FormCheck color="white" fontWeight="bold" >
+                                <Switch id="showAgas" labeled onClick={this.toggleAgAs} />
+                                <FormCheckLabel htmlFor="showAgas">
+                                    Agriculture Tax Assessments
                                 </FormCheckLabel>
                             </FormCheck>
                         </Col>

@@ -147,7 +147,7 @@ class TabNav extends Component {
                     </li>
                     <li>
                         <NavLink exact to="/census">
-                            Census
+                            Statistics
                         </NavLink>
                     </li>
                     <li>

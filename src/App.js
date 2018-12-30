@@ -18,7 +18,7 @@ import SevReport from "./components/views/SevReport"
 const NoMatch = () => <div><h3>This is not the page you were looking for.</h3></div>
 const GlobalStyle = createGlobalStyle`${globalStyle()}`;
 
-const styledHamburgerCol = styled(Col)`
+const StyledHamburgerCol = styled(Col)`
   ${up('sm', css`
   display: none;
 `)}
@@ -33,9 +33,9 @@ class App extends Component {
                             <Col xs={8} sm={12} md={12}>
                                 <Header/>
                             </Col>
-                            <styledHamburgerCol xs={2} mt={4} >
+                            <StyledHamburgerCol xs={2} mt={4} >
                                 <OverlayHamburger/>
-                            </styledHamburgerCol>
+                            </StyledHamburgerCol>
                         </Row>
                         <Row>
                             <Col xs="auto">
