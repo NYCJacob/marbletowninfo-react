@@ -9,7 +9,6 @@ import SevReport from "./SevReport";
 
 class EventLaw extends Component {
 render(){
-    console.log(this.props);
     return(
         <div>
             <Grid>

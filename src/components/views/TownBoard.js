@@ -16,9 +16,9 @@ const yearsAvailable = ["2018"];
 
 const yearsAccordionGenerator = (years) =>{
     return(
-        years.map((year) => {
+        years.map((year, index) => {
             return(
-                <div data-trigger={year} optionalclassname="years">
+                <div key={`key${index}`} data-trigger={year} optionalclassname="years">
                     <Accordion>
                         {accordGenerator(year)}
                     </Accordion>
@@ -31,20 +31,22 @@ const yearsAccordionGenerator = (years) =>{
 
 const monthAccordionGenerator = (month) => {
     return(
-        month.map(( meeting ) => {
+        month.map(( meeting, index ) => {
             let date = new Date(meeting.date).toUTCString();
 
             return (
-                <div data-trigger={date} optionalclassname="meetingPane">
+                <div key={`key${index}`} data-trigger={date} optionalclassname="meetingPane">
                     <p>Present: {meeting.present}</p>
                     <table>
-                        <th><td>Resolution</td><td style={{width:"95vw", textAlign: "right"}}>Voting</td></th>
-                        {meeting.resolutions.map( (resolution) => {
+                        <tbody>
+                        <tr><th style={{width:"90vw", textAlign: "center"}}>Resolution</th><th style={{width:"10vw", textAlign: "center"}}>Voting</th></tr>
+                        {meeting.resolutions.map( (resolution, index) => {
                                 return (
-                                    <tr><td>{resolution.title}</td><td>{resolution.voting}</td></tr>
+                                    <tr key={`key${index}`}><td>{resolution.title}</td><td>{resolution.voting}</td></tr>
                                 )
                             }
                         )}
+                        </tbody>
                     </table>
                 </div>
             )
@@ -61,7 +63,7 @@ const accordGenerator = (year) => {
     return(
         yearData.map((month, index) => {
             return (
-                <div data-trigger={ monthsArr[index] }>
+                <div key={`key${index}`} data-trigger={ monthsArr[index] }>
                     <Accordion>
                         {monthAccordionGenerator(month)}
                     </Accordion>

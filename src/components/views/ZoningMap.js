@@ -392,7 +392,7 @@ class ZoningMap extends React.Component {
                             <FormCheck color="white" fontWeight="bold" >
                                 <Switch id="showFarms" labeled onClick={this.toggleFarmMarkers} />
                                 <FormCheckLabel htmlFor="showFarms">
-                                    Show Farms
+                                    Show Active Farms
                                 </FormCheckLabel>
                             </FormCheck>
                         </Col>

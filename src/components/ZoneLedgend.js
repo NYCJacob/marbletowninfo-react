@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import {Grid, Col, Row, Button, Typography,
+import {Col, Row, Button, Typography,
     Toggler,
     Modal,
     ModalDialog,
