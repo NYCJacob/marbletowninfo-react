@@ -12,13 +12,15 @@ const StyledTownBoard = styled.section`
 const monthsArr =
     ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
 
-const yearsAvailable = ["2018"];
+const yearsAvailable = [{ "year": "2018", "townboardMembers": [ "Rich Parete (Supv)", "Tim Sweeney", "Joe Borzumato", "Eric Stewart", "Don LaFera" ] } ];
 
 const yearsAccordionGenerator = (years) =>{
     return(
-        years.map((year, index) => {
+        years.map((yearData, index) => {
+            let { year, townboardMembers } = yearData;
+            console.log(townboardMembers);
             return(
-                <div key={`key${index}`} data-trigger={year} optionalclassname="years">
+                <div key={`key${index}`} data-trigger={ `${year} Town Board: ${townboardMembers}` } optionalclassname="years">
                     <Accordion>
                         {accordGenerator(year)}
                     </Accordion>
@@ -33,6 +35,7 @@ const monthAccordionGenerator = (month) => {
     return(
         month.map(( meeting, index ) => {
             let date = new Date(meeting.date).toUTCString();
+
             return (
                 <div key={`key${index}`} data-trigger={date} optionalclassname="meetingPane">
                     <p>Present: {meeting.present}</p>
@@ -51,7 +54,7 @@ const monthAccordionGenerator = (month) => {
             )
         })
     )
-};
+}
 
 const accordGenerator = (year) => {
     let yearData;
