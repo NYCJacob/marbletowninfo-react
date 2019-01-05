@@ -145,6 +145,7 @@ class OverlayHamburger extends Component {
                     <ul className="overlay-content">
                         <li><NavLink to="/" onClick={(e)=> this.toggleMenu(e)}>Home</NavLink></li>
                         <li><NavLink to="/census" onClick={(e)=> this.toggleMenu(e)}>Census</NavLink></li>
+                        <li><NavLink to="/townboard" onClick={(e)=> this.toggleMenu(e)}>Town Board</NavLink></li>
                         <li><NavLink to="/proposedlaws/events" onClick={(e)=> this.toggleMenu(e)}>Event Law</NavLink></li>
                         <li><NavLink to="/proposedlaws/accaptsup" onClick={(e)=> this.toggleMenu(e)}>Acc Apt. Law</NavLink></li>
                         <li><NavLink to="/petition" onClick={(e)=> this.toggleMenu(e)}>Petition</NavLink></li>

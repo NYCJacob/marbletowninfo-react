@@ -33,7 +33,6 @@ const monthAccordionGenerator = (month) => {
     return(
         month.map(( meeting, index ) => {
             let date = new Date(meeting.date).toUTCString();
-
             return (
                 <div key={`key${index}`} data-trigger={date} optionalclassname="meetingPane">
                     <p>Present: {meeting.present}</p>
@@ -52,7 +51,7 @@ const monthAccordionGenerator = (month) => {
             )
         })
     )
-}
+};
 
 const accordGenerator = (year) => {
     let yearData;

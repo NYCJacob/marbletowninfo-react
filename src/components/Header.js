@@ -1,11 +1,11 @@
 import React from 'react';
-import { Grid, Row, Col, Typography, styled, css, down } from '@smooth-ui/core-sc'
+import { Row, Col, Typography, styled, css, down } from '@smooth-ui/core-sc'
 
 
 const HeaderContainer = styled.h1`
 * { box-sizing: border-box; }
     //margin-bottom: 0.5em;
-    margin-top: .3em;
+    margin-top: 0.05em;
     margin-left: 0.3em;
     padding-bottom: 0;
     margin-bottom: 0;
@@ -59,10 +59,9 @@ const Logo2 = styled.span`
     `)}
 `;
 
-
 function Header(props) {
     return (
-        <Grid>
+        <div>
             <Row >
                 <Col>
                     <HeaderContainer>
@@ -72,15 +71,14 @@ function Header(props) {
                 </Col>
 
             </Row>
-            <Row mt={1}>
-                <Col>
-                    <Typography fontSize={{xs: "0.8em",md: "1.0em"}} pt={0} mt={0}>
+            <Row>
+                <Col mt={ {xs: 0, md:1} }>
+                    <Typography fontSize={{xs: "0.8em",md: "1.0em"}} pt={0}>
                         <em>Providing insight into local politics of Marbletown, NY.</em>
                     </Typography>
                 </Col>
             </Row>
-        </Grid>
-
+        </div>
     );
 }
 

@@ -23,7 +23,7 @@ const StyledMap = styled.div`
         position: relative;
         top: 0;
         bottom: 0;
-        height: 72vh;
+        height: 70vh;
     }
     
     #overlay {
@@ -380,24 +380,24 @@ class ZoningMap extends React.Component {
                     <MapOverlay details={ this.state.parcelDetails } />
 
                     <Row style={ {fontSize: ".75em"}}>
-                        <Col background="#40617F" style={ {paddingTop: '2em'} }>
+                        <Col background="#40617F" style={ {paddingTop: '0.2em'} }>
                             <FormCheck color="white" fontWeight="bold">
                                 <Switch id="agDist" labeled onClick={this.toggleLayer} />
                                 <FormCheckLabel htmlFor="agDist">
-                                    Show NYS Agriculture Districts
+                                    NYS Agriculture Districts
                                 </FormCheckLabel>
                             </FormCheck>
                         </Col>
-                        <Col background="#40617F" style={ {paddingTop: '2em'} }>
+                        <Col background="#40617F" style={ {paddingTop: '0.2em'} }>
                             <FormCheck color="white" fontWeight="bold" >
                                 <Switch id="showFarms" labeled onClick={this.toggleFarmMarkers} />
                                 <FormCheckLabel htmlFor="showFarms">
-                                    Show Active Farms
+                                    Active Farms
                                 </FormCheckLabel>
                             </FormCheck>
                         </Col>
-                        <Col background="#40617F" style={ {paddingTop: '2em'} }>
-                            <FormCheck color="white" fontWeight="bold" >
+                        <Col background="#40617F" style={ {paddingTop: '0.2em'} }>
+                            <FormCheck color="white" fontWeight="bold">
                                 <Switch id="showAgas" labeled onClick={this.toggleAgAs} />
                                 <FormCheckLabel htmlFor="showAgas">
                                     Agriculture Tax Assessments
@@ -405,13 +405,13 @@ class ZoningMap extends React.Component {
                             </FormCheck>
                         </Col>
                         <Col background="#40617F">
-                            <Button onClick={this.resetZoom} style={ {margin: '1em', padding: '0.5em'} }>
+                            <Button onClick={this.resetZoom} style={ {margin: '0.25em', padding: '0.25em'} }>
                                 Reset Zoom/Center
                             </Button>
                         </Col>
                     </Row>
                     <Row>
-                        <Col textAlign="center">
+                        <Col textAlign="center" fontSize={{xs: "0.75em",md: "0.9em"}}>
                             <footer>
                                 &#169; 2018 FutureSense Technologies
                             </footer>
