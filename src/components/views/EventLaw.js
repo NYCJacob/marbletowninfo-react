@@ -6,6 +6,7 @@ import OtherTowns from "./OtherTowns";
 import AprilDraftLaw from "./AprilDraftLaw";
 import EventTimeline from "./EventTimeline";
 import SevReport from "./SevReport";
+import Dissent from "./Dissent";
 
 class EventLaw extends Component {
 render(){
@@ -23,7 +24,9 @@ render(){
                                 {"route": "/proposedlaws/events/timeline",
                                     "tabText": "Timeline"},
                                 {"route": "/proposedlaws/events/analysis",
-                                    "tabText": "Subcomm Report/Analysis"}
+                                    "tabText": "Subcomm Report/Analysis"},
+                                {"route": "/proposedlaws/events/dissentreport",
+                                    "tabText": "Dissent Report"}
                             ]}
                         />
                     </Col>
@@ -45,7 +48,11 @@ render(){
                         <Route
                             exact path="/proposedlaws/events/analysis"
                             component={SevReport}
-                        />
+                        /><Route
+                        exact path="/proposedlaws/events/dissentreport"
+                        component={Dissent}
+                    />
+
 
                     </Col>
 

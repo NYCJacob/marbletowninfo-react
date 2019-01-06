@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 
 import {Helmet} from "react-helmet";
-import { globalStyle, createGlobalStyle, styled, up, css, Grid, Col, Row} from '@smooth-ui/core-sc';
+import { globalStyle, createGlobalStyle, styled, up, css, Grid, Col, Row } from '@smooth-ui/core-sc';
 import Header from "./components/Header";
 import TabNav from "./components/TabNav";
 import OverlayHamburger from "./components/OverlayHamburger";
@@ -14,6 +14,7 @@ import Petition from "./components/views/Petition";
 import AccAptStatus from "./components/views/AccAptStatus";
 import Contact from "./components/views/Contact";
 import SevReport from "./components/views/SevReport"
+import IntroModal from "./components/views/IntroModal"
 
 const NoMatch = () => <div><h3>This is not the page you were looking for.</h3></div>
 const GlobalStyle = createGlobalStyle`${globalStyle()}`;
@@ -56,6 +57,7 @@ class App extends Component {
                                 <Route exact path="/" component={ZoningMap}/>
                                 <Route component={NoMatch}/>
                             </Switch>
+                        <IntroModal/>
                     </Grid>
         </BrowserRouter>
     );

@@ -18,7 +18,6 @@ const yearsAccordionGenerator = (years) =>{
     return(
         years.map((yearData, index) => {
             let { year, townboardMembers } = yearData;
-            console.log(townboardMembers);
             return(
                 <div key={`key${index}`} data-trigger={ `${year} Town Board: ${townboardMembers}` } optionalclassname="years">
                     <Accordion>
