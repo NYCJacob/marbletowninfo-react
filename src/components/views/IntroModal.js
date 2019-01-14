@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import ReactModal from 'react-modal';
-import { Button} from '@smooth-ui/core-sc';
+import { Button, Typography} from '@smooth-ui/core-sc';
 
 
 class IntroModal extends React.Component {
@@ -40,6 +40,9 @@ class IntroModal extends React.Component {
                         }
                     }}
                 >
+                    <Typography>
+                        Some stuff
+                    </Typography>
                     <Button onClick={this.handleCloseModal}>Close</Button>
                 </ReactModal>
             </div>
