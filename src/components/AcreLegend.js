@@ -33,6 +33,11 @@ const StyledAcreLegend = styled.div`
     
     }
     
+    @media (min-width: 992px){ 
+      top: 28vh;
+      font-size: x-small;
+    }
+    
     @media (max-width: 991px) and (min-width: 768px){   //md - lg
       top: 26vh;
       font-size: x-small;

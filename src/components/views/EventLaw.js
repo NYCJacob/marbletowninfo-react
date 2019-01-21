@@ -24,7 +24,7 @@ render(){
                                 {"route": "/proposedlaws/events/timeline",
                                     "tabText": "Timeline"},
                                 {"route": "/proposedlaws/events/analysis",
-                                    "tabText": "Subcomm Report/Analysis"},
+                                    "tabText": "Subcomm Report"},
                                 {"route": "/proposedlaws/events/dissentreport",
                                     "tabText": "Dissent Report"}
                             ]}

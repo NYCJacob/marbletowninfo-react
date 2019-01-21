@@ -21,6 +21,15 @@ const StyledMapOverlay = styled.div`
     }
   
     
+    @media (min-width: 992px) {   //widescreen
+      top: 18vh;
+      left: 10vw;
+      font-size: small;
+      p {
+        font-size: small;
+      }
+    }
+    
     @media (max-width: 991px) and (min-width: 768px){   //md - lg
       top: 15vh;
       font-size: small;

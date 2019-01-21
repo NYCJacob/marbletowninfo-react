@@ -14,10 +14,8 @@ import Petition from "./components/views/Petition";
 import AccAptStatus from "./components/views/AccAptStatus";
 import Contact from "./components/views/Contact";
 import SevReport from "./components/views/SevReport"
-import IntroModal from "./components/views/IntroModal"
 
 const NoMatch = () => <div><h3>This is not the page you were looking for.</h3></div>
-const GlobalStyle = createGlobalStyle`${globalStyle()}`;
 
 const StyledHamburgerCol = styled(Col)`
   ${up('sm', css`
@@ -57,7 +55,6 @@ class App extends Component {
                                 <Route exact path="/" component={ZoningMap}/>
                                 <Route component={NoMatch}/>
                             </Switch>
-                        <IntroModal/>
                     </Grid>
         </BrowserRouter>
     );

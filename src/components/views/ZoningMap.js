@@ -338,8 +338,7 @@ class ZoningMap extends React.Component {
 
         var popup = new mapboxgl.Popup({ closeOnClick: false })
             .setLngLat(currentFeature.geometry.coordinates)
-            .setHTML('<h3>' + currentFeature.properties.name + '</h3>' +
-                '<h4>' + 'details coming soon' + '</h4>')
+            .setHTML('<h3>' + currentFeature.properties.name + '</h3><h4>details coming soon</h4>')
             .addTo(this.map);
     }
 
@@ -376,8 +375,9 @@ class ZoningMap extends React.Component {
                             <div ref={el => this.mapContainer = el} id="mapGL"></div>
                         </Col>
                     </Row>
-                    <AcreLegend/>
+
                     <MapOverlay details={ this.state.parcelDetails } />
+                    <AcreLegend/>
 
                     <Row style={ {fontSize: ".75em"}}>
                         <Col background="#40617F" style={ {paddingTop: '0.2em'} }>
@@ -413,7 +413,7 @@ class ZoningMap extends React.Component {
                     <Row>
                         <Col textAlign="center" fontSize={{xs: "0.75em",md: "0.9em"}}>
                             <footer>
-                                &#169; 2018-2019 FutureSense Technologies
+                                &#169; 2018-2019 FutureSense LLC
                             </footer>
                         </Col>
                     </Row>
