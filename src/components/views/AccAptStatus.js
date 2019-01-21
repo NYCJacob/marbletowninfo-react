@@ -35,9 +35,9 @@ class AccAptStatus extends Component {
                     <Col xs={12}>
                         <SubTabNav
                             tabConfig = {[
-                                {"route": "/proposedlaws/accaptsup/2019January",
+                                {"route": "/proposedlaws/accaptsup",
                                     "tabText": "January 2019 Draft Law"},
-                                {"route": "/proposedlaws/accaptsup/",
+                                {"route": "/proposedlaws/accaptsup/2018dec",
                                     "tabText": "Dec 4 Draft"},
                                 {"route": "/proposedlaws/accaptsup/2018decMarkup",
                                     "tabText": "Dec 4 - Current Law Markup"},
@@ -52,7 +52,7 @@ class AccAptStatus extends Component {
                 <Row>
                     <Col>
                         <Route
-                            exact path="/proposedlaws/accaptsup/"
+                            exact path="/proposedlaws/accaptsup/2018dec"
                             component={Dec2018LL2DraftLaw}
                         />
                         <Route
@@ -68,7 +68,7 @@ class AccAptStatus extends Component {
                             component={NovLL2Markup}
                         />
                         <Route
-                            exact path="/proposedlaws/accaptsup/2019January"
+                            exact path="/proposedlaws/accaptsup"
                             component={AccApt201901}
                         />
                     </Col>

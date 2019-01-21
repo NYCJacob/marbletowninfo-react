@@ -1,81 +1,103 @@
 import React, { Component } from 'react';
 import styled from "styled-components";
 import { NavLink } from 'react-router-dom';
-import { Tabs, Tab, TabList } from 'react-web-tabs';
+import {css, down, up} from "@smooth-ui/core-sc";
 
 const StyledSubTab = styled.div`
+${down('sm', css`
+  display: none;
+`) }
 
-@media screen and (max-width: 450px) {
-    font-size: smaller;
-} 
-    
-    .rwt__tabs[data-rwt-vertical="true"] {
-    display: flex;
+${up('sm', css`
+  padding-right: 10vw;
+  font-size: small;
+`) }
+
+ul {
+  display: inline;
+  padding: 0;
 }
 
-.rwt__tablist:not([aria-orientation="vertical"]) {
-  border-bottom: none;
-  border-top: solid 1px #ffad2c;
+li {
+  display: inline-block;
+  transition-duration: 0.5s;
+}
+li:hover {
+  cursor: pointer;
 }
 
-.rwt__tablist[aria-orientation="vertical"] {
-    display: flex;
-    flex-direction: column;
-    flex-shrink: 0;
-    flex-grow: 0;
-    //border-right: 1px solid #ddd;
-    margin-right: 1rem;
+.navigation {
+  display: flex;
+  flex-shrink: 0;
+  flex-grow: 0;
+  margin-right: 1rem;
+  margin-top: 0.5rem;
+}
+.navigation li * {
+  outline: none !important;
+}
+.navigation li a, .navigation li span {
+  background: transparent;
+  border: 0;
+  font-family: inherit;
+  font-size: inherit;
+  padding: 0.5rem 1rem;
+  transition: background 0.3s cubic-bezier(0.22, 0.61, 0.36, 1);
+  text-decoration: none;
+  color: #000;
+  display:block;
+  border-bottom: 1px solid #000000;
 }
 
-.rwt__tab {
-    background: transparent;
-    border: 0;
-    font-family: inherit;
-    font-size: inherit;
-    padding: 0.2rem 2rem;
-    transition: background 0.3s cubic-bezier(0.22, 0.61, 0.36, 1);
-    @media screen and (max-width: 450px) {
-    padding: 0.2rem 0.5rem;
-  }
+.navigation li a:hover,
+.navigation li a:focus,
+.navigation li span:hover,
+.navigation li span:focus{
+  outline: 0;
+  background-color: #f4f4f4;
+  cursor: pointer;
 }
 
-.rwt__tab[aria-selected="false"]:hover,
-.rwt__tab:focus {
-    outline: 0;
-    background-color: #f4f4f4;
-    background-color: rgba(0,0,0,0.05);
+.navigation li a.active, 
+.navigation li span.active {
+  position: relative;
+  font-weight: bold;
+  background-color: #FFC000;
 }
 
 
-.rwt__tab[aria-selected="false"] {
 
-  border: solid 1px #ffad2c;
+.navigation li a.active:after,
+.navigation li span.active:after {
+  content: '';
+  position: absolute;
 }
 
-.rwt__tab[aria-selected="true"] {
-    position: relative;
-    font-weight: bold;
-   color: white;
-   background-color: #ffad2c;
+.navigation li a.active:after, 
+.navigation li span.active:after {
+  bottom: -1px;
+  left: 0;
+  width: 100%;
+  border-bottom: 3px solid #000;
 }
 
-.rwt__tab[aria-selected="true"]:after {
-    content: '';
-    position: absolute;
+ul li ul.subDropDown {
+  visibility: hidden;
+  opacity: 0;
+  position: absolute;
+  transition: all 0.5s ease;
+  display: none;
+  z-index: 20;
 }
 
-.rwt__tablist:not([aria-orientation="vertical"]) .rwt__tab[aria-selected="true"]:after {
-    bottom: -1px;
-    left: 0;
-    width: 100%;
-    border-bottom: none;
+ul li:hover > ul.subDropDown,
+ul li ul.subDropDown:hover {
+  visibility: visible;
+  opacity: 1;
+  display: block;
 }
 
-.rwt__tablist[aria-orientation="vertical"] .rwt__tab[aria-selected="true"]:after {
-    right: -1px;
-    top: 0;
-    height: 100%;
-}
+
 `;
 
 
@@ -85,18 +107,19 @@ class TabNav extends Component {
 
         return (
             <StyledSubTab>
-                <Tabs defaultTab="sub0">
-                    <TabList>
+                <ul className="navigation">
                         {tabConfig.map( (tab, index) => {
                             const tabNum = index.toString();
                             return(
-                                <NavLink key={index} to={tab.route}>
-                                    <Tab tabFor={"sub" + tabNum}>{tab.tabText}</Tab>
-                                </NavLink>
+                                <li>
+                                    <NavLink key={"sub" + index} exact to={tab.route}>
+                                        {tab.tabText}
+                                    </NavLink>
+                                </li>
                             )
                         })}
-                    </TabList>
-                </Tabs>
+                </ul>
+
             </StyledSubTab>
 
         );
