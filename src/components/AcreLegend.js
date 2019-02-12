@@ -34,16 +34,16 @@ const StyledAcreLegend = styled.div`
     }
     
     @media (min-width: 992px){ 
-      top: 28vh;
+      top: 33vh;
       font-size: x-small;
     }
     
     @media (max-width: 991px) and (min-width: 768px){   //md - lg
-      top: 26vh;
+      top: 31vh;
       font-size: x-small;
     }
     @media (max-width: 767px) {
-      top: 25vh;
+      top: 30vh;
       font-size: x-small;
     }
 `;

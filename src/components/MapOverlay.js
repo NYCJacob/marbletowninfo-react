@@ -22,7 +22,7 @@ const StyledMapOverlay = styled.div`
   
     
     @media (min-width: 992px) {   //widescreen
-      top: 18vh;
+      top: 20vh;
       left: 10vw;
       font-size: small;
       p {
@@ -31,14 +31,14 @@ const StyledMapOverlay = styled.div`
     }
     
     @media (max-width: 991px) and (min-width: 768px){   //md - lg
-      top: 15vh;
+      top: 17vh;
       font-size: small;
       p {
         font-size: small;
       }
     }
     @media (max-width: 767px) and (min-width: 551px) {
-      top: 15vh;
+      top: 17vh;
       left: 7vw;
       font-size: x-small;
       p {
@@ -46,7 +46,7 @@ const StyledMapOverlay = styled.div`
       }
     }
     @media (max-width: 550px) {
-      top: 13vh;
+      top: 15vh;
       font-size: x-small;
       p {
         font-size: x-small;
