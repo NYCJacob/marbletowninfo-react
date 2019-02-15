@@ -4,7 +4,6 @@ import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import {Helmet} from "react-helmet";
 import { globalStyle, createGlobalStyle, styled, up, css, Grid, Col, Row } from '@smooth-ui/core-sc';
 import Header from "./components/Header";
-import TabNav from "./components/TabNav";
 import OverlayHamburger from "./components/OverlayHamburger";
 import ZoningMap from "./components/views/ZoningMap";
 import TownBoard from "./components/views/TownBoard";
@@ -14,6 +13,8 @@ import Petition from "./components/views/Petition";
 import AccAptStatus from "./components/views/AccAptStatus";
 import Contact from "./components/views/Contact";
 import SevReport from "./components/views/SevReport"
+import Homepage from "./components/views/Homepage"
+
 import AccApt201901 from "./components/views/AccApt201901";
 
 const NoMatch = () => <div><h3>This is not the page you were looking for.</h3></div>
@@ -37,11 +38,6 @@ class App extends Component {
                                 <OverlayHamburger/>
                             </StyledHamburgerCol>
                         </Row>
-                        <Row>
-                            <Col xs="auto">
-                                <TabNav/>
-                            </Col>
-                        </Row>
                             <Helmet>
                                 <title>MarbletownInfo: local politics of Marbletown NY</title>
                             </Helmet>
@@ -53,7 +49,8 @@ class App extends Component {
                                 <Route path="/petition" component={Petition}/>
                                 <Route path="/contact" component={Contact}/>
                                 <Route path="/proposedlaws/accaptsup" component={AccAptStatus}/>
-                                <Route exact path="/" component={ZoningMap}/>
+                                {/*<Route exact path="/" component={ZoningMap}/>*/}
+                                <Route exact path="/" component={Homepage}/>
                                 <Route component={NoMatch}/>
                             </Switch>
                     </Grid>
