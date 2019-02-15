@@ -410,13 +410,7 @@ class ZoningMap extends React.Component {
                             </Button>
                         </Col>
                     </Row>
-                    <Row>
-                        <Col textAlign="center" fontSize={{xs: "0.75em",md: "0.9em"}}>
-                            <footer>
-                                &#169; 2018-2019 FutureSense LLC
-                            </footer>
-                        </Col>
-                    </Row>
+
                 </Grid>
 
             </StyledMap>

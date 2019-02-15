@@ -15,8 +15,6 @@ import Contact from "./components/views/Contact";
 import SevReport from "./components/views/SevReport"
 import Homepage from "./components/views/Homepage"
 
-import AccApt201901 from "./components/views/AccApt201901";
-
 const NoMatch = () => <div><h3>This is not the page you were looking for.</h3></div>
 
 const StyledHamburgerCol = styled(Col)`
@@ -29,7 +27,11 @@ class App extends Component {
   render() {
     return (
         <BrowserRouter>
-                    <Grid>
+                    <Grid style={ {
+                        padding: "2rem",
+                        border: "1px solid grey",
+                        boxShadow: "0 2px 10px #000"
+                    } }>
                         <Row ml={0}>
                             <Col xs={8} sm={12} md={12}>
                                 <Header/>
@@ -49,10 +51,17 @@ class App extends Component {
                                 <Route path="/petition" component={Petition}/>
                                 <Route path="/contact" component={Contact}/>
                                 <Route path="/proposedlaws/accaptsup" component={AccAptStatus}/>
-                                {/*<Route exact path="/" component={ZoningMap}/>*/}
+                                <Route exact path="/zoning" component={ZoningMap}/>
                                 <Route exact path="/" component={Homepage}/>
                                 <Route component={NoMatch}/>
                             </Switch>
+                        <Row style={ {marginTop: "1.5rem"} }>
+                            <Col textAlign="center" fontSize={{xs: "0.75em",md: "0.9em"}}>
+                                <footer>
+                                    &#169; 2018-2019 FutureSense LLC
+                                </footer>
+                            </Col>
+                        </Row>
                     </Grid>
         </BrowserRouter>
     );
